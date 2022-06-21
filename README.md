@@ -10,7 +10,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 
 ## 🚀 Dependências utilizadas
 
-* ** **
+* **ZeosLib**
 
 #### 🎲 Rodando a aplicação em desenvolvimento
 
