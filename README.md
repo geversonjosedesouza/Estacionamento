@@ -16,7 +16,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 
 ```bash
 ### Clonando o projeto
-$ git clone https://github.com/srgeverson/estacionamento.git
+$ git clone https://github.com/srgeverson/Estacionamento.git
 
 ```
 
