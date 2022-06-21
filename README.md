@@ -6,7 +6,7 @@ Este controlar as entradas e saídas de veículos.
 
 ### Pré-requisitos
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-[Git](https://git-scm.com), [Lazarus]([https://dotnet.microsoft.com/en-us/download](https://www.lazarus-ide.org/)), [Firebird](https://firebirdsql.org/) e [IBExpert](https://www.ibexpert.net/ibe/).
+[Git](https://git-scm.com), [Lazarus](https://www.lazarus-ide.org/), [Firebird](https://firebirdsql.org/) e [IBExpert](https://www.ibexpert.net/ibe/).
 
 ## 🚀 Dependências utilizadas
 
