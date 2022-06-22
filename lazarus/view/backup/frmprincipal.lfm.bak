@@ -1,0 +1,42 @@
+object FormPrincipal: TFormPrincipal
+  Left = 340
+  Height = 351
+  Top = 131
+  Width = 537
+  Caption = 'FormPrincipal'
+  FormStyle = fsMDIForm
+  Menu = mmPrincipal
+  Position = poDesktopCenter
+  object mmPrincipal: TMainMenu
+    Left = 8
+    Top = 8
+    object mniCadastro: TMenuItem
+      Caption = 'Cadastro'
+      object mniVeiculos: TMenuItem
+        Caption = 'Veículos'
+        OnClick = mniVeiculosClick
+      end
+      object mniTabelaPreco: TMenuItem
+        Caption = 'Tabela de Preços'
+        OnClick = mniTabelaPrecoClick
+      end
+      object mniTiposTempo: TMenuItem
+        Caption = 'Tipos de Tempo'
+        OnClick = mniTiposTempoClick
+      end
+    end
+    object mniOperacoes: TMenuItem
+      Caption = 'Operações'
+      object mniCaixa: TMenuItem
+        Caption = 'Caixa'
+      end
+      object mniEntradaSaida: TMenuItem
+        Caption = 'Entrada/Saída'
+      end
+    end
+    object mniSair: TMenuItem
+      Caption = 'Sair'
+      OnClick = mniSairClick
+    end
+  end
+end

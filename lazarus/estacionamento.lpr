@@ -10,7 +10,8 @@ uses
   athreads,
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, frmPrincipal
+  Forms, zcomponent, tachartlazaruspkg, frmPrincipal, frmveiculo, frmtipotempo,
+  frmtabelapreco
   { you can add units after this };
 
 {$R *.res}
@@ -19,7 +20,10 @@ begin
   RequireDerivedFormResource:=True;
   Application.Scaled:=True;
   Application.Initialize;
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TFormPrincipal, FormPrincipal);
+  Application.CreateForm(TFormVeiculo, FormVeiculo);
+  Application.CreateForm(TFormTipoTempo, FormTipoTempo);
+  Application.CreateForm(TFormTabelaPreco, FormTabelaPreco);
   Application.Run;
 end.
 

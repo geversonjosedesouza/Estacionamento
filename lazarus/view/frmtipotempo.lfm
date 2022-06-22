@@ -1,0 +1,189 @@
+object FormTipoTempo: TFormTipoTempo
+  Left = 257
+  Height = 189
+  Top = 31
+  Width = 310
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = 'Tipos de Tempo'
+  ClientHeight = 189
+  ClientWidth = 310
+  FormStyle = fsMDIChild
+  OnClose = FormClose
+  PopupMode = pmExplicit
+  PopupParent = FormPrincipal.Owner
+  Position = poMainFormCenter
+  object DBGrid1: TDBGrid
+    Left = 8
+    Height = 100
+    Top = 77
+    Width = 296
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'Código'
+        Width = 50
+        FieldName = 'ID'
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Caption = 'Descrição'
+        Width = 150
+        FieldName = 'DESCRICAO'
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Caption = 'Ativo'
+        Width = 35
+        FieldName = 'ATIVO'
+      end>
+    DataSource = DataSource1
+    TabOrder = 0
+  end
+  object dbeDescricao: TDBEdit
+    Left = 88
+    Height = 23
+    Top = 47
+    Width = 80
+    DataField = 'DESCRICAO'
+    DataSource = DataSource1
+    MaxLength = 10
+    TabOrder = 1
+  end
+  object dbtId: TDBText
+    Left = 32
+    Height = 1
+    Top = 55
+    Width = 1
+    DataField = 'ID'
+    DataSource = DataSource1
+    ParentColor = False
+  end
+  object lblId: TLabel
+    Left = 32
+    Height = 15
+    Top = 30
+    Width = 45
+    Caption = 'Código: '
+    ParentColor = False
+  end
+  object lblDescricao: TLabel
+    Left = 88
+    Height = 15
+    Top = 30
+    Width = 57
+    Caption = 'Descrição: '
+    ParentColor = False
+  end
+  object dbcAtivo: TDBCheckBox
+    Left = 180
+    Height = 23
+    Top = 47
+    Width = 52
+    Caption = 'Ativo'
+    DataField = 'ATIVO'
+    DataSource = DataSource1
+    TabOrder = 2
+    ValueChecked = '1'
+    ValueUnchecked = '0'
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 32
+    Height = 25
+    Top = 2
+    Width = 241
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 241
+    DataSource = DataSource1
+    Options = []
+    TabOrder = 3
+  end
+  object ZConnection1: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    Properties.Strings = (
+      'AutoEncodeStrings=True'
+      'controls_cp=CP_UTF8'
+    )
+    Connected = True
+    HostName = 'localhost'
+    Port = 3050
+    Database = 'C:\projetos\Estacionamento\DB\ESTACIONAMENTO.FDB'
+    User = 'SYSDBA'
+    Password = 'masterkey'
+    Protocol = 'firebird-2.5'
+    LibraryLocation = 'C:\projetos\Estacionamento\lazarus\lib\fbclient.dll'
+    Left = 16
+    Top = 192
+  end
+  object ZQuery1: TZQuery
+    Connection = ZConnection1
+    UpdateObject = ZUpdateSQL1
+    Active = True
+    SQL.Strings = (
+      'SELECT'
+      '  *'
+      'FROM'
+      '    TIPOS_TEMPO AS TP'
+    )
+    Params = <>
+    Left = 80
+    Top = 192
+  end
+  object ZUpdateSQL1: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM TIPOS_TEMPO'
+      'WHERE'
+      '  ((TIPOS_TEMPO.ID IS NULL AND :OLD_ID IS NULL) OR (TIPOS_TEMPO.ID = :OLD_ID))'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO TIPOS_TEMPO'
+      '  (ID, DESCRICAO, ATIVO)'
+      'VALUES'
+      '  (:ID, :DESCRICAO, :ATIVO)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE TIPOS_TEMPO SET'
+      '  ID = :ID,'
+      '  DESCRICAO = :DESCRICAO,'
+      '  ATIVO = :ATIVO'
+      'WHERE'
+      '  ((TIPOS_TEMPO.ID IS NULL AND :OLD_ID IS NULL) OR (TIPOS_TEMPO.ID = :OLD_ID))'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    Left = 148
+    Top = 192
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DESCRICAO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ATIVO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_ID'
+        ParamType = ptUnknown
+      end>
+  end
+  object DataSource1: TDataSource
+    DataSet = ZQuery1
+    Left = 224
+    Top = 192
+  end
+end

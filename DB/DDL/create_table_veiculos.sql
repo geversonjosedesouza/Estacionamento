@@ -1,0 +1,26 @@
+SET SQL DIALECT 3;
+
+CREATE GENERATOR GEN_VEICULOS_ID;
+
+CREATE TABLE VEICULOS (
+    ID                INTEGER,
+    DESCRICAO         VARCHAR(50) NOT NULL,
+    TEBELA_PRECOS_ID  INTEGER NOT NULL,
+    ATIVO             CHAR(1) NOT NULL
+);
+
+SET TERM ^ ;
+
+/* Trigger: VEICULOS_BI */
+CREATE OR ALTER TRIGGER TG_VEICULOS FOR VEICULOS
+ACTIVE BEFORE INSERT POSITION 0
+as
+begin
+  if (new.id is null) then
+    new.id = gen_id(gen_veiculos_id,1);
+end
+^
+
+
+SET TERM ; ^
+

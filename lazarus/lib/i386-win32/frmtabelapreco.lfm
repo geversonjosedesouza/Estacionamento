@@ -1,0 +1,225 @@
+object FormTabelaPreco: TFormTabelaPreco
+  Left = 257
+  Height = 248
+  Top = 31
+  Width = 387
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = 'Tabela de Preços'
+  ClientHeight = 248
+  ClientWidth = 387
+  FormStyle = fsMDIChild
+  OnClose = FormClose
+  PopupMode = pmExplicit
+  PopupParent = FormPrincipal.Owner
+  Position = poMainFormCenter
+  object DBGrid1: TDBGrid
+    Left = 8
+    Height = 155
+    Top = 77
+    Width = 368
+    Color = clWindow
+    Columns = <>
+    DataSource = dsTabelaPrecos
+    TabOrder = 0
+  end
+  object dbeQuantidade: TDBEdit
+    Left = 64
+    Height = 23
+    Top = 47
+    Width = 68
+    DataField = 'QUANTIDADE'
+    DataSource = dsTabelaPrecos
+    Alignment = taRightJustify
+    EditMask = '#.###,##;0;_'
+    MaxLength = 8
+    TabOrder = 1
+  end
+  object dbtId: TDBText
+    Left = 21
+    Height = 1
+    Top = 58
+    Width = 1
+    DataField = 'ID'
+    DataSource = dsTabelaPrecos
+    ParentColor = False
+  end
+  object lblId: TLabel
+    Left = 8
+    Height = 15
+    Top = 30
+    Width = 45
+    Caption = 'Código: '
+    ParentColor = False
+  end
+  object lblQuantidade: TLabel
+    Left = 64
+    Height = 15
+    Top = 30
+    Width = 68
+    Caption = 'Quantidade: '
+    ParentColor = False
+  end
+  object dbcAtivo: TDBCheckBox
+    Left = 288
+    Height = 23
+    Top = 47
+    Width = 52
+    Caption = 'Ativo'
+    DataField = 'ATIVO'
+    DataSource = dsTabelaPrecos
+    TabOrder = 2
+    ValueChecked = '1'
+    ValueUnchecked = '0'
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 80
+    Height = 25
+    Top = 2
+    Width = 241
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 241
+    DataSource = dsTabelaPrecos
+    Options = []
+    TabOrder = 3
+  end
+  object dbeValor: TDBEdit
+    Left = 141
+    Height = 23
+    Top = 47
+    Width = 80
+    DataField = 'VALOR'
+    DataSource = dsTabelaPrecos
+    Alignment = taRightJustify
+    EditMask = '#.###,##;1;_'
+    MaxLength = 8
+    TabOrder = 4
+  end
+  object lblValor: TLabel
+    Left = 141
+    Height = 15
+    Top = 30
+    Width = 29
+    Caption = 'Valor:'
+    ParentColor = False
+  end
+  object lblTipoTempo: TLabel
+    Left = 232
+    Height = 15
+    Top = 30
+    Width = 39
+    Caption = 'Tempo:'
+    ParentColor = False
+  end
+  object dbeTipoTempo: TDBEdit
+    Left = 232
+    Height = 23
+    Top = 47
+    Width = 39
+    DataField = 'TIPOS_TEMPO_ID'
+    DataSource = dsTabelaPrecos
+    Alignment = taRightJustify
+    MaxLength = 8
+    TabOrder = 5
+  end
+  object zcEstacionamento: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    Properties.Strings = (
+      'AutoEncodeStrings=True'
+      'controls_cp=CP_UTF8'
+    )
+    Connected = True
+    HostName = 'localhost'
+    Port = 3050
+    Database = 'C:\projetos\Estacionamento\DB\ESTACIONAMENTO.FDB'
+    User = 'SYSDBA'
+    Password = 'masterkey'
+    Protocol = 'firebird-2.5'
+    LibraryLocation = 'C:\projetos\Estacionamento\lazarus\lib\fbclient.dll'
+    Left = 44
+    Top = 248
+  end
+  object zqTabelaPrecos: TZQuery
+    Connection = zcEstacionamento
+    UpdateObject = zusqlTabelaPreco
+    Active = True
+    SQL.Strings = (
+      'SELECT'
+      '  *'
+      'FROM'
+      '   TABELA_PRECOS AS TP'
+    )
+    Params = <>
+    Left = 108
+    Top = 248
+  end
+  object zusqlTabelaPreco: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM TABELA_PRECOS'
+      'WHERE'
+      '  ((TABELA_PRECOS.ID IS NULL AND :OLD_ID IS NULL) OR (TABELA_PRECOS.ID = :OLD_ID))'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO TABELA_PRECOS'
+      '  (ID, QUANTIDADE, VALOR, TIPOS_TEMPO_ID, ATIVO)'
+      'VALUES'
+      '  (:ID, :QUANTIDADE, :VALOR, :TIPOS_TEMPO_ID, :ATIVO)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE TABELA_PRECOS SET'
+      '  ID = :ID,'
+      '  QUANTIDADE = :QUANTIDADE,'
+      '  VALOR = :VALOR,'
+      '  TIPOS_TEMPO_ID = :TIPOS_TEMPO_ID,'
+      '  ATIVO = :ATIVO'
+      'WHERE'
+      '  ((TABELA_PRECOS.ID IS NULL AND :OLD_ID IS NULL) OR (TABELA_PRECOS.ID = :OLD_ID))'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    Left = 176
+    Top = 248
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'QUANTIDADE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'VALOR'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TIPOS_TEMPO_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ATIVO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_ID'
+        ParamType = ptUnknown
+      end>
+  end
+  object dsTabelaPrecos: TDataSource
+    DataSet = zqTabelaPrecos
+    Left = 252
+    Top = 248
+  end
+end

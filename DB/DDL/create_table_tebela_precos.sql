@@ -1,0 +1,26 @@
+SET SQL DIALECT 3;
+
+CREATE GENERATOR GEN_TABELA_PRECOS_ID;
+
+CREATE TABLE TABELA_PRECOS (
+    ID              INTEGER,
+    QUANTIDADE      INTEGER NOT NULL,
+    VALOR           DECIMAL(15,2) NOT NULL,
+    TIPOS_TEMPO_ID  INTEGER NOT NULL,
+    ATIVO           CHAR(1) NOT NULL
+);
+
+SET TERM ^ ;
+
+/* Trigger: TG_TABELA_PRECOS */
+CREATE OR ALTER TRIGGER TG_TABELA_PRECOS FOR TABELA_PRECOS
+ACTIVE BEFORE INSERT POSITION 0
+as
+begin
+  if (new.id is null) then
+    new.id = gen_id(gen_tabela_precos_id,1);
+end
+^
+
+SET TERM ; ^
+
