@@ -1,8 +1,8 @@
 object FormPrincipal: TFormPrincipal
   Left = 340
-  Height = 351
+  Height = 334
   Top = 131
-  Width = 537
+  Width = 800
   Caption = 'FormPrincipal'
   FormStyle = fsMDIForm
   Menu = mmPrincipal

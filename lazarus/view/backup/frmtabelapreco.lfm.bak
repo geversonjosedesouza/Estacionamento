@@ -1,132 +1,189 @@
 object FormTabelaPreco: TFormTabelaPreco
   Left = 257
-  Height = 248
+  Height = 371
   Top = 31
-  Width = 387
+  Width = 457
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Tabela de Preços'
-  ClientHeight = 248
-  ClientWidth = 387
+  ClientHeight = 371
+  ClientWidth = 457
   FormStyle = fsMDIChild
   OnClose = FormClose
   PopupMode = pmExplicit
   PopupParent = FormPrincipal.Owner
   Position = poMainFormCenter
-  object DBGrid1: TDBGrid
-    Left = 8
-    Height = 155
-    Top = 77
-    Width = 368
-    Color = clWindow
-    Columns = <>
-    DataSource = dsTabelaPrecos
+  object Panel1: TPanel
+    Left = 0
+    Height = 371
+    Top = 0
+    Width = 457
+    Align = alClient
+    Caption = 'pnlTabelaPrecos'
+    ClientHeight = 371
+    ClientWidth = 457
     TabOrder = 0
-  end
-  object dbeQuantidade: TDBEdit
-    Left = 64
-    Height = 23
-    Top = 47
-    Width = 68
-    DataField = 'QUANTIDADE'
-    DataSource = dsTabelaPrecos
-    Alignment = taRightJustify
-    EditMask = '#.###,##;0;_'
-    MaxLength = 8
-    TabOrder = 1
-  end
-  object dbtId: TDBText
-    Left = 21
-    Height = 1
-    Top = 58
-    Width = 1
-    DataField = 'ID'
-    DataSource = dsTabelaPrecos
-    ParentColor = False
-  end
-  object lblId: TLabel
-    Left = 8
-    Height = 15
-    Top = 30
-    Width = 45
-    Caption = 'Código: '
-    ParentColor = False
-  end
-  object lblQuantidade: TLabel
-    Left = 64
-    Height = 15
-    Top = 30
-    Width = 68
-    Caption = 'Quantidade: '
-    ParentColor = False
-  end
-  object dbcAtivo: TDBCheckBox
-    Left = 288
-    Height = 23
-    Top = 47
-    Width = 52
-    Caption = 'Ativo'
-    DataField = 'ATIVO'
-    DataSource = dsTabelaPrecos
-    TabOrder = 2
-    ValueChecked = '1'
-    ValueUnchecked = '0'
-  end
-  object DBNavigator1: TDBNavigator
-    Left = 80
-    Height = 25
-    Top = 2
-    Width = 241
-    BevelOuter = bvNone
-    ChildSizing.EnlargeHorizontal = crsScaleChilds
-    ChildSizing.EnlargeVertical = crsScaleChilds
-    ChildSizing.ShrinkHorizontal = crsScaleChilds
-    ChildSizing.ShrinkVertical = crsScaleChilds
-    ChildSizing.Layout = cclLeftToRightThenTopToBottom
-    ChildSizing.ControlsPerLine = 100
-    ClientHeight = 25
-    ClientWidth = 241
-    DataSource = dsTabelaPrecos
-    Options = []
-    TabOrder = 3
-  end
-  object dbeValor: TDBEdit
-    Left = 141
-    Height = 23
-    Top = 47
-    Width = 80
-    DataField = 'VALOR'
-    DataSource = dsTabelaPrecos
-    Alignment = taRightJustify
-    EditMask = '#.###,##;1;_'
-    MaxLength = 8
-    TabOrder = 4
-  end
-  object lblValor: TLabel
-    Left = 141
-    Height = 15
-    Top = 30
-    Width = 29
-    Caption = 'Valor:'
-    ParentColor = False
-  end
-  object lblTipoTempo: TLabel
-    Left = 232
-    Height = 15
-    Top = 30
-    Width = 39
-    Caption = 'Tempo:'
-    ParentColor = False
-  end
-  object dbeTipoTempo: TDBEdit
-    Left = 232
-    Height = 23
-    Top = 47
-    Width = 39
-    DataField = 'TIPOS_TEMPO_ID'
-    DataSource = dsTabelaPrecos
-    Alignment = taRightJustify
-    MaxLength = 8
-    TabOrder = 5
+    object pnlForm: TPanel
+      Left = 1
+      Height = 79
+      Top = 1
+      Width = 455
+      Align = alTop
+      ClientHeight = 79
+      ClientWidth = 455
+      TabOrder = 0
+      object DBNavigator1: TDBNavigator
+        Left = 1
+        Height = 25
+        Top = 1
+        Width = 453
+        Align = alTop
+        BevelOuter = bvNone
+        ChildSizing.EnlargeHorizontal = crsScaleChilds
+        ChildSizing.EnlargeVertical = crsScaleChilds
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 100
+        ClientHeight = 25
+        ClientWidth = 453
+        DataSource = dsTabelaPrecos
+        Options = []
+        TabOrder = 4
+      end
+      object dbcAtivo: TDBCheckBox
+        Left = 328
+        Height = 23
+        Top = 47
+        Width = 52
+        Caption = 'Ativo'
+        DataField = 'ATIVO'
+        DataSource = dsTabelaPrecos
+        TabOrder = 3
+        ValueChecked = '1'
+        ValueUnchecked = '0'
+      end
+      object dbeValor: TDBEdit
+        Left = 141
+        Height = 23
+        Top = 47
+        Width = 80
+        DataField = 'VALOR'
+        DataSource = dsTabelaPrecos
+        Alignment = taRightJustify
+        MaxLength = 0
+        TabOrder = 1
+      end
+      object dbeQuantidade: TDBEdit
+        Left = 64
+        Height = 23
+        Top = 47
+        Width = 68
+        DataField = 'QUANTIDADE'
+        DataSource = dsTabelaPrecos
+        Alignment = taRightJustify
+        EditMask = '999.999;1;_'
+        MaxLength = 7
+        TabOrder = 0
+      end
+      object dbtId: TDBText
+        Left = 21
+        Height = 15
+        Top = 58
+        Width = 6
+        DataField = 'ID'
+        DataSource = dsTabelaPrecos
+        ParentColor = False
+      end
+      object lblId: TLabel
+        Left = 8
+        Height = 15
+        Top = 30
+        Width = 45
+        Caption = 'Código: '
+        ParentColor = False
+      end
+      object lblQuantidade: TLabel
+        Left = 64
+        Height = 15
+        Top = 30
+        Width = 68
+        Caption = 'Quantidade: '
+        ParentColor = False
+      end
+      object lblValor: TLabel
+        Left = 141
+        Height = 15
+        Top = 30
+        Width = 29
+        Caption = 'Valor:'
+        ParentColor = False
+      end
+      object lblTipoTempo: TLabel
+        Left = 232
+        Height = 15
+        Top = 30
+        Width = 39
+        Caption = 'Tempo:'
+        ParentColor = False
+      end
+      object dblcbTiposTempo: TDBLookupComboBox
+        Left = 232
+        Height = 23
+        Top = 48
+        Width = 88
+        DataField = 'TIPOS_TEMPO_ID'
+        DataSource = dsTabelaPrecos
+        KeyField = 'ID'
+        ListField = 'DESCRICAO'
+        ListFieldIndex = 0
+        ListSource = dsTIPOS_TEMPO
+        LookupCache = False
+        TabOrder = 2
+      end
+    end
+    object pnlDados: TPanel
+      Left = 1
+      Height = 234
+      Top = 80
+      Width = 455
+      Align = alTop
+      ClientHeight = 234
+      ClientWidth = 455
+      TabOrder = 1
+      object dbgTabelaPrecos: TDBGrid
+        Left = 1
+        Height = 232
+        Top = 1
+        Width = 453
+        Align = alClient
+        Color = clWindow
+        Columns = <        
+          item
+            Title.Caption = 'Código'
+            FieldName = 'ID'
+          end        
+          item
+            Title.Caption = 'Quantidade'
+            FieldName = 'QUANTIDADE'
+          end        
+          item
+            Title.Caption = 'Valor'
+            FieldName = 'VALOR'
+            DisplayFormat = '#0.00'
+          end        
+          item
+            Title.Caption = 'Tempo'
+            FieldName = 'TIPOS_TEMPO_ID'
+          end        
+          item
+            Title.Alignment = taCenter
+            Title.Caption = 'Status'
+            FieldName = 'ATIVO'
+          end>
+        DataSource = dsTabelaPrecos
+        TabOrder = 0
+      end
+    end
   end
   object zcEstacionamento: TZConnection
     ControlsCodePage = cCP_UTF8
@@ -149,6 +206,8 @@ object FormTabelaPreco: TFormTabelaPreco
   object zqTabelaPrecos: TZQuery
     Connection = zcEstacionamento
     UpdateObject = zusqlTabelaPreco
+    BeforePost = zqTabelaPrecosBeforePost
+    BeforeDelete = zqTabelaPrecosBeforeDelete
     Active = True
     SQL.Strings = (
       'SELECT'
@@ -220,6 +279,26 @@ object FormTabelaPreco: TFormTabelaPreco
   object dsTabelaPrecos: TDataSource
     DataSet = zqTabelaPrecos
     Left = 252
+    Top = 248
+  end
+  object dsTIPOS_TEMPO: TDataSource
+    DataSet = zqTiposTempo
+    Left = 384
+    Top = 248
+  end
+  object zqTiposTempo: TZQuery
+    Connection = zcEstacionamento
+    Active = True
+    SQL.Strings = (
+      'SELECT '
+      '*'
+      'FROM'
+      'TIPOS_TEMPO AS TP'
+      'WHERE '
+      'TP.ATIVO = 1'
+    )
+    Params = <>
+    Left = 352
     Top = 248
   end
 end

@@ -6,31 +6,39 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, DBGrids, DBCtrls,
-  StdCtrls, ZConnection, ZDataset, ZSqlUpdate, DB;
+  StdCtrls, ExtCtrls, ZConnection, ZDataset, ZSqlUpdate, DB, SQLDB, LCLType,
+  TAChartLiveView;
 
 type
 
   { TFormTabelaPreco }
 
   TFormTabelaPreco = class(TForm)
-    dbeTipoTempo: TDBEdit;
-    dsTabelaPrecos: TDataSource;
+    dsTIPOS_TEMPO: TDataSource;
     dbcAtivo: TDBCheckBox;
     dbeQuantidade: TDBEdit;
     dbeValor: TDBEdit;
-    DBGrid1: TDBGrid;
+    dbgTabelaPrecos: TDBGrid;
+    dblcbTiposTempo: TDBLookupComboBox;
     DBNavigator1: TDBNavigator;
     dbtId: TDBText;
-    lblQuantidade: TLabel;
+    dsTabelaPrecos: TDataSource;
     lblId: TLabel;
-    lblValor: TLabel;
+    lblQuantidade: TLabel;
     lblTipoTempo: TLabel;
+    lblValor: TLabel;
+    Panel1: TPanel;
+    pnlDados: TPanel;
+    pnlForm: TPanel;
     zcEstacionamento: TZConnection;
     zqTabelaPrecos: TZQuery;
+    zqTiposTempo: TZQuery;
     zusqlTabelaPreco: TZUpdateSQL;
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure zqTabelaPrecosBeforeDelete(DataSet: TDataSet);
+    procedure zqTabelaPrecosBeforePost(DataSet: TDataSet);
   private
-
+    procedure Criticas;
   public
 
   end;
@@ -49,5 +57,33 @@ begin
   FormTabelaPreco.Free;
 end;
 
-end.
+procedure TFormTabelaPreco.zqTabelaPrecosBeforeDelete(DataSet: TDataSet);
+begin
+     if IDNO = Application.MessageBox('Tem certeza que deseja excluir?', 'Atenção', MB_ICONQUESTION + MB_YESNO) then
+        Abort;
+end;
 
+procedure TFormTabelaPreco.zqTabelaPrecosBeforePost(DataSet: TDataSet);
+begin
+  Criticas();
+end;
+
+procedure TFormTabelaPreco.Criticas;
+var
+  intOk: integer = -2;
+begin
+  //if (dbtId.Field.Value = null) then
+  //   intOk:= Application.MessageBox('Marque o status do preço a ser criado!', 'Atenção', MB_ICONEXCLAMATION);
+  if (dbeQuantidade.Field.Value = null) then
+     intOk:= Application.MessageBox('Informe uma quantidade!', 'Atenção', MB_ICONEXCLAMATION);
+  if (dbeValor.Field.Value = null) then
+     intOk:= Application.MessageBox('Informe um valor!', 'Atenção', MB_ICONEXCLAMATION);
+  if (dblcbTiposTempo.Field.Value = null) then
+     intOk:= Application.MessageBox('Selecione um tempo!', 'Atenção', MB_ICONEXCLAMATION);
+  if (dbcAtivo.Field.Value = null) then
+     intOk:= Application.MessageBox('Marque o status do preço a ser criado!', 'Atenção', MB_ICONEXCLAMATION);
+  if intOk <> -2 then
+     Abort;
+end;
+
+end.

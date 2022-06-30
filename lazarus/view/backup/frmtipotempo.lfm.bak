@@ -1,108 +1,138 @@
 object FormTipoTempo: TFormTipoTempo
   Left = 257
-  Height = 187
+  Height = 189
   Top = 31
-  Width = 310
+  Width = 708
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Tipos de Tempo'
-  ClientHeight = 187
-  ClientWidth = 310
+  ClientHeight = 189
+  ClientWidth = 708
   FormStyle = fsMDIChild
   OnClose = FormClose
   PopupMode = pmExplicit
   PopupParent = FormPrincipal.Owner
   Position = poMainFormCenter
-  object DBGrid1: TDBGrid
-    Left = 8
-    Height = 100
-    Top = 77
-    Width = 296
-    Color = clWindow
-    Columns = <    
-      item
-        Title.Caption = 'Código'
-        Width = 50
-        FieldName = 'ID'
-      end    
-      item
-        Title.Alignment = taCenter
-        Title.Caption = 'Descrição'
-        Width = 150
-        FieldName = 'DESCRICAO'
-      end    
-      item
-        Title.Alignment = taCenter
-        Title.Caption = 'Ativo'
-        Width = 35
-        FieldName = 'ATIVO'
-      end>
-    DataSource = DataSource1
+  object pnlTipoTempo: TPanel
+    Left = 296
+    Height = 176
+    Top = 8
+    Width = 309
+    Align = alCustom
+    ClientHeight = 176
+    ClientWidth = 309
     TabOrder = 0
-  end
-  object dbeDescricao: TDBEdit
-    Left = 88
-    Height = 23
-    Top = 47
-    Width = 80
-    DataField = 'DESCRICAO'
-    DataSource = DataSource1
-    MaxLength = 10
-    TabOrder = 1
-  end
-  object dbtId: TDBText
-    Left = 32
-    Height = 1
-    Top = 55
-    Width = 1
-    DataField = 'ID'
-    DataSource = DataSource1
-    ParentColor = False
-  end
-  object lblId: TLabel
-    Left = 32
-    Height = 15
-    Top = 30
-    Width = 45
-    Caption = 'Código: '
-    ParentColor = False
-  end
-  object lblDescricao: TLabel
-    Left = 88
-    Height = 15
-    Top = 30
-    Width = 57
-    Caption = 'Descrição: '
-    ParentColor = False
-  end
-  object dbcAtivo: TDBCheckBox
-    Left = 180
-    Height = 23
-    Top = 47
-    Width = 52
-    Caption = 'Ativo'
-    DataField = 'ATIVO'
-    DataSource = DataSource1
-    TabOrder = 2
-    ValueChecked = '1'
-    ValueUnchecked = '0'
-  end
-  object DBNavigator1: TDBNavigator
-    Left = 32
-    Height = 25
-    Top = 2
-    Width = 241
-    BevelOuter = bvNone
-    ChildSizing.EnlargeHorizontal = crsScaleChilds
-    ChildSizing.EnlargeVertical = crsScaleChilds
-    ChildSizing.ShrinkHorizontal = crsScaleChilds
-    ChildSizing.ShrinkVertical = crsScaleChilds
-    ChildSizing.Layout = cclLeftToRightThenTopToBottom
-    ChildSizing.ControlsPerLine = 100
-    ClientHeight = 25
-    ClientWidth = 241
-    DataSource = DataSource1
-    Options = []
-    TabOrder = 3
+    object pnlForm: TPanel
+      Left = 1
+      Height = 79
+      Top = 1
+      Width = 307
+      Align = alTop
+      ClientHeight = 79
+      ClientWidth = 307
+      TabOrder = 0
+      object DBNavigator1: TDBNavigator
+        Left = 1
+        Height = 25
+        Top = 1
+        Width = 305
+        Align = alTop
+        BevelOuter = bvNone
+        ChildSizing.EnlargeHorizontal = crsScaleChilds
+        ChildSizing.EnlargeVertical = crsScaleChilds
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 100
+        ClientHeight = 25
+        ClientWidth = 305
+        DataSource = DataSource1
+        Options = []
+        TabOrder = 0
+      end
+      object dbeDescricao: TDBEdit
+        Left = 88
+        Height = 23
+        Top = 47
+        Width = 80
+        DataField = 'DESCRICAO'
+        DataSource = DataSource1
+        MaxLength = 10
+        TabOrder = 1
+      end
+      object dbtId: TDBText
+        Left = 32
+        Height = 15
+        Top = 55
+        Width = 28
+        DataField = 'ID'
+        DataSource = DataSource1
+        ParentColor = False
+      end
+      object lblId: TLabel
+        Left = 32
+        Height = 15
+        Top = 30
+        Width = 45
+        Caption = 'Código: '
+        ParentColor = False
+      end
+      object lblDescricao: TLabel
+        Left = 88
+        Height = 15
+        Top = 30
+        Width = 57
+        Caption = 'Descrição: '
+        ParentColor = False
+      end
+      object dbcAtivo: TDBCheckBox
+        Left = 180
+        Height = 23
+        Top = 47
+        Width = 52
+        Caption = 'Ativo'
+        DataField = 'ATIVO'
+        DataSource = DataSource1
+        TabOrder = 2
+        ValueChecked = '1'
+        ValueUnchecked = '0'
+      end
+    end
+    object pnlDados: TPanel
+      Left = 138
+      Height = 50
+      Top = 112
+      Width = 170
+      ClientHeight = 50
+      ClientWidth = 170
+      TabOrder = 1
+      object dbgTipoTempo: TDBGrid
+        Left = 0
+        Height = 100
+        Top = 0
+        Width = 296
+        Color = clWindow
+        Columns = <        
+          item
+            Title.Caption = 'Código'
+            Width = 50
+            FieldName = 'ID'
+          end        
+          item
+            Title.Alignment = taCenter
+            Title.Caption = 'Descrição'
+            Width = 150
+            FieldName = 'DESCRICAO'
+          end        
+          item
+            Title.Alignment = taCenter
+            Title.Caption = 'Ativo'
+            Width = 35
+            FieldName = 'ATIVO'
+          end>
+        DataSource = DataSource1
+        TabOrder = 0
+      end
+    end
   end
   object ZConnection1: TZConnection
     ControlsCodePage = cCP_UTF8

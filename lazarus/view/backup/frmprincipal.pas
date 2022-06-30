@@ -5,7 +5,8 @@ unit frmPrincipal;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ComCtrls, Menus
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ComCtrls, Menus,
+  ZStoredProcedure
   //Fromulários
   , frmveiculo, frmtipotempo, frmtabelapreco;
 
