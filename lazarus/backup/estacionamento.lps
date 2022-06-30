@@ -11,7 +11,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="5"/>
         <CursorPos Y="24"/>
-        <UsageCount Value="35"/>
+        <UsageCount Value="37"/>
       </Unit>
       <Unit>
         <Filename Value="view\frmprincipal.pas"/>
@@ -20,10 +20,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="frmPrincipal"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <TopLine Value="5"/>
-        <CursorPos X="54" Y="60"/>
-        <UsageCount Value="35"/>
+        <CursorPos X="74" Y="8"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -33,10 +34,10 @@
         <ComponentName Value="FormVeiculo"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="16"/>
-        <CursorPos X="15" Y="36"/>
-        <UsageCount Value="35"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="55"/>
+        <CursorPos X="3" Y="61"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -47,9 +48,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="52"/>
-        <CursorPos X="16" Y="67"/>
-        <UsageCount Value="33"/>
+        <TopLine Value="55"/>
+        <CursorPos X="15" Y="57"/>
+        <UsageCount Value="35"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -59,10 +60,9 @@
         <ComponentName Value="FormTabelaPreco"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="67"/>
-        <CursorPos X="16" Y="83"/>
-        <UsageCount Value="29"/>
+        <TopLine Value="61"/>
+        <CursorPos X="18" Y="63"/>
+        <UsageCount Value="31"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -74,32 +74,18 @@
         <CursorPos X="74" Y="55"/>
         <UsageCount Value="10"/>
       </Unit>
+      <Unit>
+        <Filename Value="view\frmcaixa.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="3"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="view\frmtabelapreco.pas"/>
-        <Caret Line="65" Column="21" TopLine="51"/>
-      </Position>
-      <Position>
-        <Filename Value="view\frmtabelapreco.pas"/>
-        <Caret Line="64" TopLine="51"/>
-      </Position>
-      <Position>
-        <Filename Value="view\frmtabelapreco.pas"/>
-        <Caret Line="65" Column="8" TopLine="51"/>
-      </Position>
-      <Position>
-        <Filename Value="view\frmtabelapreco.pas"/>
-        <Caret Line="71" Column="19" TopLine="57"/>
-      </Position>
-      <Position>
-        <Filename Value="view\frmtabelapreco.pas"/>
-        <Caret Line="72" Column="19" TopLine="58"/>
-      </Position>
-      <Position>
-        <Filename Value="view\frmtabelapreco.pas"/>
-        <Caret Line="71" Column="19" TopLine="57"/>
-      </Position>
       <Position>
         <Filename Value="view\frmtabelapreco.pas"/>
         <Caret Line="76" TopLine="60"/>
@@ -196,6 +182,30 @@
         <Filename Value="view\frmtipotempo.pas"/>
         <Caret Line="64" Column="96" TopLine="52"/>
       </Position>
+      <Position>
+        <Filename Value="view\frmveiculo.pas"/>
+        <Caret Line="69" Column="28" TopLine="51"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmveiculo.pas"/>
+        <Caret Line="66" Column="12" TopLine="52"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmveiculo.pas"/>
+        <Caret Line="61" Column="22" TopLine="52"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmveiculo.pas"/>
+        <Caret Line="10" Column="41"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmtipotempo.pas"/>
+        <Caret Line="9" Column="86" TopLine="25"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmtabelapreco.pas"/>
+        <Caret Line="80" TopLine="73"/>
+      </Position>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
@@ -203,22 +213,6 @@
     </RunParams>
   </ProjectSession>
   <Debugging>
-    <BreakPoints>
-      <Item>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="view\frmtabelapreco.pas"/>
-        <Line Value="75"/>
-      </Item>
-      <Item>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="view\frmtabelapreco.pas"/>
-        <Line Value="74"/>
-      </Item>
-    </BreakPoints>
     <Watches>
       <Item>
         <Expression Value="
@@ -226,6 +220,12 @@
       </Item>
       <Item>
         <Expression Value="2"/>
+      </Item>
+      <Item>
+        <Expression Value="LCLType"/>
+      </Item>
+      <Item>
+        <Expression Value="dbckATIVO"/>
       </Item>
     </Watches>
   </Debugging>

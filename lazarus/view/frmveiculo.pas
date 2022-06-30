@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, SQLDB, DB, IBConnection, Forms, Controls, Graphics,
   Dialogs, StdCtrls, ExtCtrls, DBCtrls, Buttons, DBGrids, ZConnection, ZDataset,
-  ZSqlUpdate, TAIntervalSources;
+  ZSqlUpdate, TAIntervalSources, LCLType;
 
 type
 
@@ -33,7 +33,10 @@ type
     zqVEICULOS: TZQuery;
     zuVEICULOS: TZUpdateSQL;
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure zqVEICULOSAfterPost(DataSet: TDataSet);
+    procedure zqVEICULOSBeforePost(DataSet: TDataSet);
   private
+    procedure Criticas;
 
   public
 
@@ -51,6 +54,30 @@ implementation
 procedure TFormVeiculo.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
   FormVeiculo.Free;
+end;
+
+procedure TFormVeiculo.zqVEICULOSAfterPost(DataSet: TDataSet);
+begin
+  dbgVeiculos.DataSource.DataSet.Refresh;
+end;
+
+procedure TFormVeiculo.zqVEICULOSBeforePost(DataSet: TDataSet);
+begin
+  Criticas;
+end;
+
+procedure TFormVeiculo.Criticas;
+var
+  intOk: integer = 0;
+begin
+  if (dbeDESCRICAO.Field.Value = null) then
+     intOk:= Application.MessageBox('Informe a descrição!', 'Atenção', MB_ICONEXCLAMATION);
+  if (dblcbTABELA_PRECOS_ID.Field.Value = null) then
+     intOk:= Application.MessageBox('Informe a tabela de preço!', 'Atenção', MB_ICONEXCLAMATION);
+  if (dbckATIVO.Field.Value = null) then
+     intOk:= Application.MessageBox('Marque o status do preço a ser criado!', 'Atenção', MB_ICONEXCLAMATION);
+  if intOk <> 0 then
+     Abort;
 end;
 
 end.

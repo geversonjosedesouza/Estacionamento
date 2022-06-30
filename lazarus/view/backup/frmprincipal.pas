@@ -6,9 +6,8 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ComCtrls, Menus,
-  ZStoredProcedure
   //Fromulários
-  , frmveiculo, frmtipotempo, frmtabelapreco;
+  frmveiculo, frmtipotempo, frmtabelapreco, frmcaixa;
 
 type
 
@@ -24,6 +23,7 @@ type
     mniVeiculos: TMenuItem;
     mniCadastro: TMenuItem;
     mniOperacoes: TMenuItem;
+    procedure mniCaixaClick(Sender: TObject);
     procedure mniSairClick(Sender: TObject);
     procedure mniTabelaPrecoClick(Sender: TObject);
     procedure mniTiposTempoClick(Sender: TObject);
@@ -46,6 +46,12 @@ implementation
 procedure TFormPrincipal.mniSairClick(Sender: TObject);
 begin
   FormPrincipal.Close;
+end;
+
+procedure TFormPrincipal.mniCaixaClick(Sender: TObject);
+begin
+   FormTabelaPreco := TFormTabelaPreco.Create(Application);
+  FormTabelaPreco.Show;
 end;
 
 procedure TFormPrincipal.mniTabelaPrecoClick(Sender: TObject);

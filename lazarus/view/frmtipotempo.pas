@@ -28,6 +28,7 @@ type
     zqTiposTempo: TZQuery;
     ZUpdateSQL1: TZUpdateSQL;
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure zqTiposTempoAfterPost(DataSet: TDataSet);
     procedure zqTiposTempoBeforePost(DataSet: TDataSet);
   private
     procedure Criticas;
@@ -49,6 +50,11 @@ procedure TFormTipoTempo.FormClose(Sender: TObject;
   var CloseAction: TCloseAction);
 begin
     FormTipoTempo.Free;
+end;
+
+procedure TFormTipoTempo.zqTiposTempoAfterPost(DataSet: TDataSet);
+begin
+  dbgTipoTempo.DataSource.DataSet.Refresh;
 end;
 
 procedure TFormTipoTempo.zqTiposTempoBeforePost(DataSet: TDataSet);

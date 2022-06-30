@@ -28,6 +28,7 @@ type
     zqTiposTempo: TZQuery;
     ZUpdateSQL1: TZUpdateSQL;
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure zqTiposTempoAfterPost(DataSet: TDataSet);
     procedure zqTiposTempoBeforePost(DataSet: TDataSet);
   private
     procedure Criticas;
@@ -51,6 +52,11 @@ begin
     FormTipoTempo.Free;
 end;
 
+procedure TFormTipoTempo.zqTiposTempoAfterPost(DataSet: TDataSet);
+begin
+  dbgTipoTempo.DataSource.DataSet.Refresh;
+end;
+
 procedure TFormTipoTempo.zqTiposTempoBeforePost(DataSet: TDataSet);
 begin
      Criticas;
@@ -64,7 +70,7 @@ begin
      intOk:= Application.MessageBox('Informe a descrição!', 'Atenção', MB_ICONEXCLAMATION);
   if (dbcAtivo.Field.Value = null) then
      intOk:= Application.MessageBox('Marque o status do tipo do tempo a ser criado!', 'Atenção', MB_ICONEXCLAMATION);
-  if intOk <> 1 then
+  if intOk <> 0 then
      Abort;
 end;
 

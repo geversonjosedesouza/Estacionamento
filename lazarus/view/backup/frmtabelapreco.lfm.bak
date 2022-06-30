@@ -12,7 +12,6 @@ object FormTabelaPreco: TFormTabelaPreco
   PopupMode = pmExplicit
   PopupParent = FormPrincipal.Owner
   Position = poMainFormCenter
-  LCLVersion = '2.2.2.0'
   object Panel1: TPanel
     Left = 0
     Height = 371
@@ -178,7 +177,7 @@ object FormTabelaPreco: TFormTabelaPreco
           item
             Title.Alignment = taCenter
             Title.Caption = 'Status'
-            FieldName = 'ATIVO'
+            FieldName = 'STATUS'
           end>
         DataSource = dsTabelaPrecos
         TabOrder = 0
@@ -207,10 +206,12 @@ object FormTabelaPreco: TFormTabelaPreco
     Connection = zcEstacionamento
     UpdateObject = zusqlTabelaPreco
     BeforePost = zqTabelaPrecosBeforePost
+    AfterPost = zqTabelaPrecosAfterPost
     Active = True
     SQL.Strings = (
       'SELECT'
-      '  *'
+      '  tp.*,'
+      'case when tp.ativo = 1 then ''Ativo'' else ''Inativo'' end as status'
       'FROM'
       '   TABELA_PRECOS AS TP'
     )

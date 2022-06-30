@@ -3,7 +3,7 @@ object FormPrincipal: TFormPrincipal
   Height = 334
   Top = 131
   Width = 800
-  Caption = 'FormPrincipal'
+  Caption = 'Principal - Estacionamento'
   FormStyle = fsMDIForm
   Menu = mmPrincipal
   Position = poDesktopCenter
@@ -29,6 +29,7 @@ object FormPrincipal: TFormPrincipal
       Caption = 'Operações'
       object mniCaixa: TMenuItem
         Caption = 'Caixa'
+        OnClick = mniCaixaClick
       end
       object mniEntradaSaida: TMenuItem
         Caption = 'Entrada/Saída'

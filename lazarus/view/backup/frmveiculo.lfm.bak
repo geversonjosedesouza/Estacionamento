@@ -2,10 +2,10 @@ object FormVeiculo: TFormVeiculo
   Left = 257
   Height = 357
   Top = 31
-  Width = 424
+  Width = 466
   Caption = 'Veículos'
   ClientHeight = 357
-  ClientWidth = 424
+  ClientWidth = 466
   FormStyle = fsMDIChild
   OnClose = FormClose
   PopupMode = pmExplicit
@@ -15,25 +15,25 @@ object FormVeiculo: TFormVeiculo
     Left = 0
     Height = 357
     Top = 0
-    Width = 424
+    Width = 466
     Align = alClient
     ClientHeight = 357
-    ClientWidth = 424
+    ClientWidth = 466
     TabOrder = 0
     object pnlForm: TPanel
       Left = 1
       Height = 90
       Top = 1
-      Width = 422
+      Width = 464
       Align = alTop
       ClientHeight = 90
-      ClientWidth = 422
+      ClientWidth = 464
       TabOrder = 0
       object dbnVeiculos: TDBNavigator
         Left = 1
         Height = 25
         Top = 1
-        Width = 420
+        Width = 462
         Align = alTop
         BevelOuter = bvNone
         ChildSizing.EnlargeHorizontal = crsScaleChilds
@@ -43,16 +43,16 @@ object FormVeiculo: TFormVeiculo
         ChildSizing.Layout = cclLeftToRightThenTopToBottom
         ChildSizing.ControlsPerLine = 100
         ClientHeight = 25
-        ClientWidth = 420
+        ClientWidth = 462
         DataSource = dsVEICULOS
         Options = []
         TabOrder = 0
       end
       object dbID: TDBText
         Left = 32
-        Height = 15
+        Height = 1
         Top = 61
-        Width = 6
+        Width = 1
         DataField = 'ID'
         DataSource = dsVEICULOS
         ParentColor = False
@@ -91,7 +91,7 @@ object FormVeiculo: TFormVeiculo
         Caption = 'Ativo'
         DataField = 'ATIVO'
         DataSource = dsVEICULOS
-        TabOrder = 4
+        TabOrder = 5
         ValueChecked = '1'
         ValueUnchecked = '0'
       end
@@ -107,29 +107,29 @@ object FormVeiculo: TFormVeiculo
         ListFieldIndex = 0
         ListSource = dsTABELA_PRECO
         LookupCache = False
-        TabOrder = 5
+        TabOrder = 4
       end
     end
     object pnlDados: TPanel
       Left = 1
       Height = 261
       Top = 91
-      Width = 422
+      Width = 464
       Align = alTop
       ClientHeight = 261
-      ClientWidth = 422
+      ClientWidth = 464
       TabOrder = 1
       object dbgVeiculos: TDBGrid
         Left = 1
         Height = 259
         Top = 1
-        Width = 420
+        Width = 462
         Align = alClient
         Color = clWindow
         Columns = <        
           item
             Title.Caption = 'Código'
-            Width = 45
+            Width = 50
             FieldName = 'ID'
           end        
           item
@@ -138,13 +138,14 @@ object FormVeiculo: TFormVeiculo
             FieldName = 'DESCRICAO'
           end        
           item
-            Title.Caption = 'Preços'
-            Width = 50
-            FieldName = 'TEBELA_PRECOS_ID'
+            Title.Caption = 'Tabela de Preço'
+            Width = 100
+            FieldName = 'TABELA_PRECO'
           end        
           item
             Title.Caption = 'Status'
-            FieldName = 'ATIVO'
+            Width = 50
+            FieldName = 'STATUS'
           end>
         DataSource = dsVEICULOS
         TabOrder = 0
@@ -155,7 +156,7 @@ object FormVeiculo: TFormVeiculo
     Left = 184
     Height = 17
     Top = 36
-    Width = 40
+    Width = 96
     Caption = 'Tebela de Preço:'
     TabOrder = 1
   end
@@ -185,12 +186,17 @@ object FormVeiculo: TFormVeiculo
   object zqVEICULOS: TZQuery
     Connection = zcESTACIONAMENTO
     UpdateObject = zuVEICULOS
+    BeforePost = zqVEICULOSBeforePost
+    AfterPost = zqVEICULOSAfterPost
     Active = True
     SQL.Strings = (
-      'SELECT '
-      '*'
-      'FROM'
-      'VEICULOS AS V'
+      'select '
+      '    v.*,'
+      '    (tt.descricao || '' - '' || tp.valor) as tabela_preco,'
+      '    case when v.ativo = 1 then ''Ativo'' else ''Inativo'' end as status'
+      'from veiculos as v'
+      '   inner join tabela_precos as tp on (v.tebela_precos_id = tp.id)'
+      '   inner join tipos_tempo as tt on (tp.tipos_tempo_id = tt.id)'
     )
     Params = <>
     Left = 96

@@ -35,6 +35,7 @@ type
     zqTiposTempo: TZQuery;
     zusqlTabelaPreco: TZUpdateSQL;
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure zqTabelaPrecosAfterPost(DataSet: TDataSet);
     procedure zqTabelaPrecosBeforeDelete(DataSet: TDataSet);
     procedure zqTabelaPrecosBeforePost(DataSet: TDataSet);
   private
@@ -55,6 +56,11 @@ implementation
 procedure TFormTabelaPreco.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
   FormTabelaPreco.Free;
+end;
+
+procedure TFormTabelaPreco.zqTabelaPrecosAfterPost(DataSet: TDataSet);
+begin
+  dbgTabelaPrecos.DataSource.DataSet.Refresh;
 end;
 
 procedure TFormTabelaPreco.zqTabelaPrecosBeforeDelete(DataSet: TDataSet);

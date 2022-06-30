@@ -127,9 +127,9 @@ object FormTipoTempo: TFormTipoTempo
           end        
           item
             Title.Alignment = taCenter
-            Title.Caption = 'Ativo'
-            Width = 35
-            FieldName = 'ATIVO'
+            Title.Caption = 'Status'
+            Width = 50
+            FieldName = 'STATUS'
           end>
         DataSource = DataSource1
         TabOrder = 0
@@ -158,10 +158,12 @@ object FormTipoTempo: TFormTipoTempo
     Connection = ZConnection1
     UpdateObject = ZUpdateSQL1
     BeforePost = zqTiposTempoBeforePost
+    AfterPost = zqTiposTempoAfterPost
     Active = True
     SQL.Strings = (
       'SELECT'
-      '  *'
+      '  tp.*,'
+      'case when tp.ativo = 1 then ''Ativo'' else ''Inativo'' end as status'
       'FROM'
       '    TIPOS_TEMPO AS TP'
     )

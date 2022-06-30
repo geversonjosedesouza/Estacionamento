@@ -1,0 +1,8 @@
+object FormCaixa: TFormCaixa
+  Left = 286
+  Height = 240
+  Top = 31
+  Width = 320
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = 'Caixa'
+end

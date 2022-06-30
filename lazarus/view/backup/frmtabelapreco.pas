@@ -35,6 +35,7 @@ type
     zqTiposTempo: TZQuery;
     zusqlTabelaPreco: TZUpdateSQL;
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure zqTabelaPrecosAfterPost(DataSet: TDataSet);
     procedure zqTabelaPrecosBeforeDelete(DataSet: TDataSet);
     procedure zqTabelaPrecosBeforePost(DataSet: TDataSet);
   private
@@ -57,6 +58,11 @@ begin
   FormTabelaPreco.Free;
 end;
 
+procedure TFormTabelaPreco.zqTabelaPrecosAfterPost(DataSet: TDataSet);
+begin
+  dbgTabelaPrecos.DataSource.DataSet.Refresh;
+end;
+
 procedure TFormTabelaPreco.zqTabelaPrecosBeforeDelete(DataSet: TDataSet);
 begin
      if IDNO = Application.MessageBox('Tem certeza que deseja excluir?', 'Atenção', MB_ICONQUESTION + MB_YESNO) then
@@ -70,7 +76,7 @@ end;
 
 procedure TFormTabelaPreco.Criticas;
 var
-  intOk: integer = 1;
+  intOk: integer = 0;
 begin
   if (dbeQuantidade.Field.Value = null) then
      intOk:= Application.MessageBox('Informe uma quantidade!', 'Atenção', MB_ICONEXCLAMATION);
@@ -80,7 +86,7 @@ begin
      intOk:= Application.MessageBox('Selecione um tempo!', 'Atenção', MB_ICONEXCLAMATION);
   if (dbcAtivo.Field.Value = null) then
      intOk:= Application.MessageBox('Marque o status do preço a ser criado!', 'Atenção', MB_ICONEXCLAMATION);
-  if intOk <> 1 then
+  if intOk <> 0 then
      Abort;
 end;
 
