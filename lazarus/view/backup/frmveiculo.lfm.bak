@@ -50,9 +50,9 @@ object FormVeiculo: TFormVeiculo
       end
       object dbID: TDBText
         Left = 32
-        Height = 1
+        Height = 15
         Top = 61
-        Width = 1
+        Width = 6
         DataField = 'ID'
         DataSource = dsVEICULOS
         ParentColor = False
@@ -84,7 +84,7 @@ object FormVeiculo: TFormVeiculo
         TabOrder = 3
       end
       object dbckATIVO: TDBCheckBox
-        Left = 315
+        Left = 368
         Height = 23
         Top = 53
         Width = 46
@@ -99,13 +99,13 @@ object FormVeiculo: TFormVeiculo
         Left = 184
         Height = 23
         Top = 53
-        Width = 121
+        Width = 173
         DataField = 'TEBELA_PRECOS_ID'
         DataSource = dsVEICULOS
         KeyField = 'ID'
         ListField = 'DESCRICAO'
         ListFieldIndex = 0
-        ListSource = dsTIPOS_TEMPO
+        ListSource = dsTABELA_PRECO
         LookupCache = False
         TabOrder = 5
       end
@@ -156,7 +156,7 @@ object FormVeiculo: TFormVeiculo
     Height = 17
     Top = 36
     Width = 40
-    Caption = 'Preço:'
+    Caption = 'Tebela de Preço:'
     TabOrder = 1
   end
   object dsVEICULOS: TDataSource
@@ -247,21 +247,26 @@ object FormVeiculo: TFormVeiculo
         ParamType = ptUnknown
       end>
   end
-  object dsTIPOS_TEMPO: TDataSource
-    DataSet = zqTIPOS_TEMPO
+  object dsTABELA_PRECO: TDataSource
+    DataSet = zqTABELA_PRECO
     Left = 256
     Top = 205
   end
-  object zqTIPOS_TEMPO: TZQuery
+  object zqTABELA_PRECO: TZQuery
     Connection = zcESTACIONAMENTO
     Active = True
     SQL.Strings = (
-      'SELECT '
-      '* '
-      'FROM '
-      'TIPOS_TEMPO AS TT'
-      'WHERE '
-      'TT.ATIVO = 1'
+      'select'
+      '    tp.id,'
+      '    (tp.quantidade || '' - '' ||'
+      '    tt.descricao || '' - '' ||'
+      '    tp.valor'
+      '    ) AS DESCRICAO'
+      'from tabela_precos as tp'
+      '   inner join tipos_tempo as tt on (tp.tipos_tempo_id = tt.id)'
+      '   where'
+      '   tp.ativo = 1'
+      '   and tt.ativo = 1'
     )
     Params = <>
     Left = 96

@@ -20,8 +20,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="frmPrincipal"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="49"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="5"/>
         <CursorPos X="54" Y="60"/>
         <UsageCount Value="35"/>
         <Loaded Value="True"/>
@@ -33,7 +33,7 @@
         <ComponentName Value="FormVeiculo"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="3"/>
         <TopLine Value="16"/>
         <CursorPos X="15" Y="36"/>
         <UsageCount Value="35"/>
@@ -46,9 +46,9 @@
         <ComponentName Value="FormTipoTempo"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="33"/>
-        <CursorPos Y="49"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="52"/>
+        <CursorPos X="16" Y="67"/>
         <UsageCount Value="33"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -59,8 +59,9 @@
         <ComponentName Value="FormTabelaPreco"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <TopLine Value="59"/>
-        <CursorPos X="54" Y="60"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="67"/>
+        <CursorPos X="16" Y="83"/>
         <UsageCount Value="29"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -68,55 +69,13 @@
       <Unit>
         <Filename Value="C:\lazarus\lcl\lclstrconsts.pas"/>
         <UnitName Value="LCLStrConsts"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="35"/>
         <CursorPos X="74" Y="55"/>
         <UsageCount Value="10"/>
-        <Loaded Value="True"/>
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="view\frmtabelapreco.pas"/>
-        <Caret Line="56" Column="5" TopLine="39"/>
-      </Position>
-      <Position>
-        <Filename Value="view\frmtabelapreco.pas"/>
-        <Caret Line="35" Column="35" TopLine="27"/>
-      </Position>
-      <Position>
-        <Filename Value="view\frmtabelapreco.pas"/>
-        <Caret Line="37" Column="59" TopLine="37"/>
-      </Position>
-      <Position>
-        <Filename Value="view\frmtabelapreco.pas"/>
-        <Caret Line="60" Column="14" TopLine="44"/>
-      </Position>
-      <Position>
-        <Filename Value="view\frmtabelapreco.pas"/>
-        <Caret Line="40" TopLine="33"/>
-      </Position>
-      <Position>
-        <Filename Value="view\frmtabelapreco.pas"/>
-        <Caret Line="66" Column="17" TopLine="50"/>
-      </Position>
-      <Position>
-        <Filename Value="view\frmtabelapreco.pas"/>
-        <Caret Line="9" Column="76" TopLine="5"/>
-      </Position>
-      <Position>
-        <Filename Value="view\frmtabelapreco.pas"/>
-        <Caret Line="65" Column="79" TopLine="50"/>
-      </Position>
-      <Position>
-        <Filename Value="view\frmtabelapreco.pas"/>
-        <Caret Line="67" Column="43" TopLine="53"/>
-      </Position>
-      <Position>
-        <Filename Value="view\frmtabelapreco.pas"/>
-        <Caret Line="64" TopLine="51"/>
-      </Position>
       <Position>
         <Filename Value="view\frmtabelapreco.pas"/>
         <Caret Line="65" Column="21" TopLine="51"/>
@@ -194,8 +153,48 @@
         <Caret Line="73" TopLine="57"/>
       </Position>
       <Position>
-        <Filename Value="C:\lazarus\lcl\lclstrconsts.pas"/>
-        <Caret TopLine="13"/>
+        <Filename Value="view\frmtabelapreco.pas"/>
+        <Caret Line="75" TopLine="67"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmtabelapreco.pas"/>
+        <Caret Line="76" Column="7" TopLine="67"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmtabelapreco.pas"/>
+        <Caret Line="79" TopLine="67"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmtabelapreco.pas"/>
+        <Caret Line="80" Column="8" TopLine="67"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmtabelapreco.pas"/>
+        <Caret Line="83" Column="16" TopLine="67"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmtabelapreco.pas"/>
+        <Caret Line="82" TopLine="67"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmtabelapreco.pas"/>
+        <Caret Line="83" TopLine="67"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmtabelapreco.pas"/>
+        <Caret Line="84" TopLine="67"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmtipotempo.pas"/>
+        <Caret Line="50" TopLine="34"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmtipotempo.pas"/>
+        <Caret Line="60" Column="24" TopLine="53"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmtipotempo.pas"/>
+        <Caret Line="64" Column="96" TopLine="52"/>
       </Position>
     </JumpHistory>
     <RunParams>
@@ -204,6 +203,22 @@
     </RunParams>
   </ProjectSession>
   <Debugging>
+    <BreakPoints>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="view\frmtabelapreco.pas"/>
+        <Line Value="75"/>
+      </Item>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="view\frmtabelapreco.pas"/>
+        <Line Value="74"/>
+      </Item>
+    </BreakPoints>
     <Watches>
       <Item>
         <Expression Value="

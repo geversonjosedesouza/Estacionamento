@@ -63,7 +63,7 @@ object FormTipoTempo: TFormTipoTempo
         Left = 32
         Height = 15
         Top = 55
-        Width = 28
+        Width = 6
         DataField = 'ID'
         DataSource = DataSource1
         ParentColor = False
@@ -154,9 +154,10 @@ object FormTipoTempo: TFormTipoTempo
     Left = 16
     Top = 192
   end
-  object ZQuery1: TZQuery
+  object zqTiposTempo: TZQuery
     Connection = ZConnection1
     UpdateObject = ZUpdateSQL1
+    BeforePost = zqTiposTempoBeforePost
     Active = True
     SQL.Strings = (
       'SELECT'
@@ -214,7 +215,7 @@ object FormTipoTempo: TFormTipoTempo
       end>
   end
   object DataSource1: TDataSource
-    DataSet = ZQuery1
+    DataSet = zqTiposTempo
     Left = 224
     Top = 192
   end

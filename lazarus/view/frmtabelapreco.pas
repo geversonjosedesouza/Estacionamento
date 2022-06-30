@@ -70,10 +70,8 @@ end;
 
 procedure TFormTabelaPreco.Criticas;
 var
-  intOk: integer = -2;
+  intOk: integer = 0;
 begin
-  //if (dbtId.Field.Value = null) then
-  //   intOk:= Application.MessageBox('Marque o status do preço a ser criado!', 'Atenção', MB_ICONEXCLAMATION);
   if (dbeQuantidade.Field.Value = null) then
      intOk:= Application.MessageBox('Informe uma quantidade!', 'Atenção', MB_ICONEXCLAMATION);
   if (dbeValor.Field.Value = null) then
@@ -82,7 +80,7 @@ begin
      intOk:= Application.MessageBox('Selecione um tempo!', 'Atenção', MB_ICONEXCLAMATION);
   if (dbcAtivo.Field.Value = null) then
      intOk:= Application.MessageBox('Marque o status do preço a ser criado!', 'Atenção', MB_ICONEXCLAMATION);
-  if intOk <> -2 then
+  if intOk <> 0 then
      Abort;
 end;
 

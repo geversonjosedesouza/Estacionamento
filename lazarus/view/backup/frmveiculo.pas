@@ -14,7 +14,7 @@ type
   { TFormVeiculo }
 
   TFormVeiculo = class(TForm)
-    dsTIPOS_TEMPO: TDataSource;
+    dsTABELA_PRECO: TDataSource;
     dblcbTABELA_PRECOS_ID: TDBLookupComboBox;
     dsVEICULOS: TDataSource;
     dbckATIVO: TDBCheckBox;
@@ -29,7 +29,7 @@ type
     stxtTABELA_PRECOS_ID: TStaticText;
     stxtID: TStaticText;
     zcESTACIONAMENTO: TZConnection;
-    zqTIPOS_TEMPO: TZQuery;
+    zqTABELA_PRECO: TZQuery;
     zqVEICULOS: TZQuery;
     zuVEICULOS: TZUpdateSQL;
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);

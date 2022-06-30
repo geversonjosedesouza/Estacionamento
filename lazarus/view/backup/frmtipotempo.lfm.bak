@@ -1,40 +1,40 @@
 object FormTipoTempo: TFormTipoTempo
   Left = 257
-  Height = 189
+  Height = 256
   Top = 31
-  Width = 708
+  Width = 406
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Tipos de Tempo'
-  ClientHeight = 189
-  ClientWidth = 708
+  ClientHeight = 256
+  ClientWidth = 406
   FormStyle = fsMDIChild
   OnClose = FormClose
   PopupMode = pmExplicit
   PopupParent = FormPrincipal.Owner
   Position = poMainFormCenter
   object pnlTipoTempo: TPanel
-    Left = 296
-    Height = 176
-    Top = 8
-    Width = 309
-    Align = alCustom
-    ClientHeight = 176
-    ClientWidth = 309
+    Left = 0
+    Height = 256
+    Top = 0
+    Width = 406
+    Align = alClient
+    ClientHeight = 256
+    ClientWidth = 406
     TabOrder = 0
     object pnlForm: TPanel
       Left = 1
       Height = 79
       Top = 1
-      Width = 307
+      Width = 404
       Align = alTop
       ClientHeight = 79
-      ClientWidth = 307
+      ClientWidth = 404
       TabOrder = 0
       object DBNavigator1: TDBNavigator
         Left = 1
         Height = 25
         Top = 1
-        Width = 305
+        Width = 402
         Align = alTop
         BevelOuter = bvNone
         ChildSizing.EnlargeHorizontal = crsScaleChilds
@@ -44,7 +44,7 @@ object FormTipoTempo: TFormTipoTempo
         ChildSizing.Layout = cclLeftToRightThenTopToBottom
         ChildSizing.ControlsPerLine = 100
         ClientHeight = 25
-        ClientWidth = 305
+        ClientWidth = 402
         DataSource = DataSource1
         Options = []
         TabOrder = 0
@@ -63,7 +63,7 @@ object FormTipoTempo: TFormTipoTempo
         Left = 32
         Height = 15
         Top = 55
-        Width = 28
+        Width = 6
         DataField = 'ID'
         DataSource = DataSource1
         ParentColor = False
@@ -98,18 +98,20 @@ object FormTipoTempo: TFormTipoTempo
       end
     end
     object pnlDados: TPanel
-      Left = 138
-      Height = 50
-      Top = 112
-      Width = 170
-      ClientHeight = 50
-      ClientWidth = 170
+      Left = 1
+      Height = 176
+      Top = 80
+      Width = 404
+      Align = alTop
+      ClientHeight = 176
+      ClientWidth = 404
       TabOrder = 1
       object dbgTipoTempo: TDBGrid
-        Left = 0
-        Height = 100
-        Top = 0
-        Width = 296
+        Left = 1
+        Height = 174
+        Top = 1
+        Width = 402
+        Align = alClient
         Color = clWindow
         Columns = <        
           item
@@ -152,9 +154,10 @@ object FormTipoTempo: TFormTipoTempo
     Left = 16
     Top = 192
   end
-  object ZQuery1: TZQuery
+  object zqTiposTempo: TZQuery
     Connection = ZConnection1
     UpdateObject = ZUpdateSQL1
+    BeforePost = zqTiposTempoBeforePost
     Active = True
     SQL.Strings = (
       'SELECT'
@@ -212,7 +215,7 @@ object FormTipoTempo: TFormTipoTempo
       end>
   end
   object DataSource1: TDataSource
-    DataSet = ZQuery1
+    DataSet = zqTiposTempo
     Left = 224
     Top = 192
   end
