@@ -1,4 +1,13 @@
+# Compilado x86
 lazarus/lib/i386-win32/
+
+# Executável
 lazarus/estacionamento.exe
+
+# Icone do sistema
 lazarus/estacionamento.ico
+
+# Arquivos de backup gerados pela IDE
 lazarus/backup/
+lazarus/view/backup/
+
