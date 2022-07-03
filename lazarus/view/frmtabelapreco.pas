@@ -27,7 +27,7 @@ type
     lblQuantidade: TLabel;
     lblTipoTempo: TLabel;
     lblValor: TLabel;
-    Panel1: TPanel;
+    pnlTabelaPrecos: TPanel;
     pnlDados: TPanel;
     pnlForm: TPanel;
     zcEstacionamento: TZConnection;
@@ -35,6 +35,7 @@ type
     zqTiposTempo: TZQuery;
     zusqlTabelaPreco: TZUpdateSQL;
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure zqTabelaPrecosAfterInsert(DataSet: TDataSet);
     procedure zqTabelaPrecosAfterPost(DataSet: TDataSet);
     procedure zqTabelaPrecosBeforePost(DataSet: TDataSet);
   private
@@ -57,6 +58,11 @@ implementation
 procedure TFormTabelaPreco.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
   FormTabelaPreco.Free;
+end;
+
+procedure TFormTabelaPreco.zqTabelaPrecosAfterInsert(DataSet: TDataSet);
+begin
+  zqTabelaPrecos.FieldByName('USUARIO').Value := usuario;
 end;
 
 procedure TFormTabelaPreco.zqTabelaPrecosAfterPost(DataSet: TDataSet);

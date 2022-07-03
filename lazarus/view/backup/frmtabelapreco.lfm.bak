@@ -2,41 +2,40 @@ object FormTabelaPreco: TFormTabelaPreco
   Left = 257
   Height = 371
   Top = 31
-  Width = 487
+  Width = 589
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Tabela de Preços'
   ClientHeight = 371
-  ClientWidth = 487
+  ClientWidth = 589
   FormStyle = fsMDIChild
   OnClose = FormClose
   PopupMode = pmExplicit
   PopupParent = FormPrincipal.Owner
   Position = poMainFormCenter
-  LCLVersion = '2.2.2.0'
-  object Panel1: TPanel
+  object pnlTabelaPrecos: TPanel
     Left = 0
     Height = 371
     Top = 0
-    Width = 487
+    Width = 589
     Align = alClient
     Caption = 'pnlTabelaPrecos'
     ClientHeight = 371
-    ClientWidth = 487
+    ClientWidth = 589
     TabOrder = 0
     object pnlForm: TPanel
       Left = 1
       Height = 79
       Top = 1
-      Width = 485
+      Width = 587
       Align = alTop
       ClientHeight = 79
-      ClientWidth = 485
+      ClientWidth = 587
       TabOrder = 0
       object DBNavigator1: TDBNavigator
         Left = 1
         Height = 25
         Top = 1
-        Width = 483
+        Width = 585
         Align = alTop
         BevelOuter = bvNone
         ChildSizing.EnlargeHorizontal = crsScaleChilds
@@ -46,7 +45,7 @@ object FormTabelaPreco: TFormTabelaPreco
         ChildSizing.Layout = cclLeftToRightThenTopToBottom
         ChildSizing.ControlsPerLine = 100
         ClientHeight = 25
-        ClientWidth = 483
+        ClientWidth = 585
         DataSource = dsTabelaPrecos
         Options = []
         TabOrder = 4
@@ -87,9 +86,9 @@ object FormTabelaPreco: TFormTabelaPreco
       end
       object dbtId: TDBText
         Left = 21
-        Height = 15
+        Height = 1
         Top = 58
-        Width = 6
+        Width = 1
         DataField = 'ID'
         DataSource = dsTabelaPrecos
         ParentColor = False
@@ -143,18 +142,18 @@ object FormTabelaPreco: TFormTabelaPreco
     end
     object pnlDados: TPanel
       Left = 1
-      Height = 234
+      Height = 290
       Top = 80
-      Width = 485
-      Align = alTop
-      ClientHeight = 234
-      ClientWidth = 485
+      Width = 587
+      Align = alClient
+      ClientHeight = 290
+      ClientWidth = 587
       TabOrder = 1
       object dbgTabelaPrecos: TDBGrid
         Left = 1
-        Height = 232
+        Height = 288
         Top = 1
-        Width = 483
+        Width = 585
         Align = alClient
         Color = clWindow
         Columns = <        
@@ -179,6 +178,12 @@ object FormTabelaPreco: TFormTabelaPreco
             Title.Alignment = taCenter
             Title.Caption = 'Status'
             FieldName = 'STATUS'
+          end        
+          item
+            Title.Alignment = taCenter
+            Title.Caption = 'Usuário Operação'
+            Width = 100
+            FieldName = 'USUARIO'
           end>
         DataSource = dsTabelaPrecos
         TabOrder = 0
@@ -231,9 +236,9 @@ object FormTabelaPreco: TFormTabelaPreco
     )
     InsertSQL.Strings = (
       'INSERT INTO TABELA_PRECOS'
-      '  (ID, QUANTIDADE, VALOR, TIPOS_TEMPO_ID, ATIVO)'
+      '  (ID, QUANTIDADE, VALOR, TIPOS_TEMPO_ID, ATIVO, USUARIO)'
       'VALUES'
-      '  (:ID, :QUANTIDADE, :VALOR, :TIPOS_TEMPO_ID, :ATIVO)'
+      '  (:ID, :QUANTIDADE, :VALOR, :TIPOS_TEMPO_ID, :ATIVO, :USUARIO)'
     )
     ModifySQL.Strings = (
       'UPDATE TABELA_PRECOS SET'
@@ -241,7 +246,8 @@ object FormTabelaPreco: TFormTabelaPreco
       '  QUANTIDADE = :QUANTIDADE,'
       '  VALOR = :VALOR,'
       '  TIPOS_TEMPO_ID = :TIPOS_TEMPO_ID,'
-      '  ATIVO = :ATIVO'
+      '  ATIVO = :ATIVO,'
+      '  USUARIO = :USUARIO'
       'WHERE'
       '  ((TABELA_PRECOS.ID IS NULL AND :OLD_ID IS NULL) OR (TABELA_PRECOS.ID = :OLD_ID))'
     )
@@ -272,6 +278,11 @@ object FormTabelaPreco: TFormTabelaPreco
       item
         DataType = ftUnknown
         Name = 'ATIVO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'USUARIO'
         ParamType = ptUnknown
       end    
       item

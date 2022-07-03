@@ -58,7 +58,7 @@ end;
 
 procedure TFormPrincipal.mniTabelaPrecoClick(Sender: TObject);
 begin
-  FormTabelaPreco := TFormTabelaPreco.Create(Application);
+  FormTabelaPreco := TFormTabelaPreco.Create(Self, 'usuario');
   FormTabelaPreco.Show;
 end;
 

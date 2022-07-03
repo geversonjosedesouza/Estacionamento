@@ -27,7 +27,7 @@ type
     lblQuantidade: TLabel;
     lblTipoTempo: TLabel;
     lblValor: TLabel;
-    Panel1: TPanel;
+    pnlTabelaPrecos: TPanel;
     pnlDados: TPanel;
     pnlForm: TPanel;
     zcEstacionamento: TZConnection;
@@ -88,6 +88,7 @@ end;
 constructor TFormTabelaPreco.Create(AOwner: TComponent; login: String);
 begin
   inherited Create(AOwner);
+  usuario:= login;
 end;
 
 end.

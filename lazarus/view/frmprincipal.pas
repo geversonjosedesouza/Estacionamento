@@ -58,13 +58,13 @@ end;
 
 procedure TFormPrincipal.mniTabelaPrecoClick(Sender: TObject);
 begin
-  FormTabelaPreco := TFormTabelaPreco.Create(Application);
+  FormTabelaPreco := TFormTabelaPreco.Create(Self, usuario);
   FormTabelaPreco.Show;
 end;
 
 procedure TFormPrincipal.mniTiposTempoClick(Sender: TObject);
 begin
-  FormTipoTempo := TFormTipoTempo.Create(Self, 'usuario');
+  FormTipoTempo := TFormTipoTempo.Create(Self, usuario);
   FormTipoTempo.Show;
 end;
 
