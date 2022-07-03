@@ -140,15 +140,6 @@ object FormTipoTempo: TFormTipoTempo
         DataSource = dsTiposTempo
         TabOrder = 0
       end
-      object DBGrid1: TDBGrid
-        Left = 384
-        Height = 100
-        Top = 24
-        Width = 200
-        Color = clWindow
-        Columns = <>
-        TabOrder = 1
-      end
     end
   end
   object zcEstacionamento: TZConnection

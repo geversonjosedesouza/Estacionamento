@@ -48,8 +48,8 @@
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="67"/>
-        <CursorPos X="24" Y="68"/>
+        <TopLine Value="66"/>
+        <CursorPos X="24" Y="67"/>
         <UsageCount Value="178"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -81,14 +81,6 @@
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="view\frmcaixa.pas"/>
-        <Caret Line="167" TopLine="151"/>
-      </Position>
-      <Position>
-        <Filename Value="view\frmcaixa.pas"/>
-        <Caret Line="168" Column="42" TopLine="159"/>
-      </Position>
       <Position>
         <Filename Value="view\frmcaixa.pas"/>
         <Caret Line="158" Column="28" TopLine="145"/>
@@ -200,6 +192,14 @@
       <Position>
         <Filename Value="view\frmtipotempo.pas"/>
         <Caret Line="33" Column="56" TopLine="19"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmtipotempo.pas"/>
+        <Caret Line="68" Column="24" TopLine="67"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmtipotempo.pas"/>
+        <Caret Line="67" Column="24" TopLine="66"/>
       </Position>
     </JumpHistory>
     <RunParams>

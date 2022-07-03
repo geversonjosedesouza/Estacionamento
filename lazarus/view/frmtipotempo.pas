@@ -16,7 +16,6 @@ type
     dsTiposTempo: TDataSource;
     dbcAtivo: TDBCheckBox;
     dbeDescricao: TDBEdit;
-    DBGrid1: TDBGrid;
     dbgTipoTempo: TDBGrid;
     DBNavigator1: TDBNavigator;
     dbtId: TDBText;

@@ -52,7 +52,7 @@ end;
 
 procedure TFormPrincipal.mniCaixaClick(Sender: TObject);
 begin
-   FormCaixa := TFormCaixa.Create(Self, 'usuario');
+   FormCaixa := TFormCaixa.Create(Self, usuario);
    FormCaixa.Show;
 end;
 
@@ -64,7 +64,7 @@ end;
 
 procedure TFormPrincipal.mniTiposTempoClick(Sender: TObject);
 begin
-  FormTipoTempo := TFormTipoTempo.Create(Application);
+  FormTipoTempo := TFormTipoTempo.Create(Self, usuario);
   FormTipoTempo.Show;
 end;
 
