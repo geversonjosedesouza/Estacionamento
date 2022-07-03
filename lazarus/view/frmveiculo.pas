@@ -36,10 +36,11 @@ type
     procedure zqVEICULOSAfterPost(DataSet: TDataSet);
     procedure zqVEICULOSBeforePost(DataSet: TDataSet);
   private
+    usuario: string;
     procedure Criticas;
 
   public
-
+    constructor Create(AOwner: TComponent; login: string); overload;
   end;
 
 var
@@ -78,6 +79,12 @@ begin
      intOk:= Application.MessageBox('Marque o status do preço a ser criado!', 'Atenção', MB_ICONEXCLAMATION);
   if intOk <> 0 then
      Abort;
+end;
+
+constructor TFormVeiculo.Create(AOwner: TComponent; login: string);
+begin
+  inherited Create(AOwner);
+  usuario:= login;
 end;
 
 end.

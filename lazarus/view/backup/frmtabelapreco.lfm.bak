@@ -12,6 +12,7 @@ object FormTabelaPreco: TFormTabelaPreco
   PopupMode = pmExplicit
   PopupParent = FormPrincipal.Owner
   Position = poMainFormCenter
+  LCLVersion = '2.2.2.0'
   object Panel1: TPanel
     Left = 0
     Height = 371
@@ -88,7 +89,7 @@ object FormTabelaPreco: TFormTabelaPreco
         Left = 21
         Height = 15
         Top = 58
-        Width = 28
+        Width = 6
         DataField = 'ID'
         DataSource = dsTabelaPrecos
         ParentColor = False
@@ -207,6 +208,7 @@ object FormTabelaPreco: TFormTabelaPreco
     UpdateObject = zusqlTabelaPreco
     BeforePost = zqTabelaPrecosBeforePost
     AfterPost = zqTabelaPrecosAfterPost
+    Active = True
     SQL.Strings = (
       'SELECT tp.*,'
       '       CASE'

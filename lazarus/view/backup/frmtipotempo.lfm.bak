@@ -162,10 +162,10 @@ object FormTipoTempo: TFormTipoTempo
     Active = True
     SQL.Strings = (
       'SELECT'
-      '  tp.*,'
-      'case when tp.ativo = 1 then ''Ativo'' else ''Inativo'' end as status'
+      '  tt.*,'
+      'case when tt.ativo = 1 then ''Ativo'' else ''Inativo'' end as status'
       'FROM'
-      '    TIPOS_TEMPO AS TP'
+      '    TIPOS_TEMPO AS TT'
     )
     Params = <>
     Left = 80

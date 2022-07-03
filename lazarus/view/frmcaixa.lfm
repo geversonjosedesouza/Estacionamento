@@ -2,11 +2,11 @@ object FormCaixa: TFormCaixa
   Left = 286
   Height = 239
   Top = 31
-  Width = 206
+  Width = 270
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Caixa'
   ClientHeight = 239
-  ClientWidth = 206
+  ClientWidth = 270
   FormStyle = fsMDIChild
   OnActivate = FormActivate
   OnClose = FormClose
@@ -17,25 +17,25 @@ object FormCaixa: TFormCaixa
     Left = 0
     Height = 239
     Top = 0
-    Width = 206
+    Width = 270
     Align = alClient
     ClientHeight = 239
-    ClientWidth = 206
+    ClientWidth = 270
     TabOrder = 0
     object pnlInfo: TPanel
       Left = 1
       Height = 50
       Top = 1
-      Width = 204
+      Width = 268
       Align = alTop
       ClientHeight = 50
-      ClientWidth = 204
+      ClientWidth = 268
       TabOrder = 0
       object lblSituacao: TLabel
         Left = 1
         Height = 37
         Top = 1
-        Width = 202
+        Width = 266
         Align = alTop
         Alignment = taCenter
         Caption = 'situação'
@@ -49,11 +49,11 @@ object FormCaixa: TFormCaixa
       Left = 1
       Height = 188
       Top = 51
-      Width = 204
+      Width = 268
       Align = alTop
       Anchors = [akTop, akLeft, akRight, akBottom]
       ClientHeight = 188
-      ClientWidth = 204
+      ClientWidth = 268
       TabOrder = 1
       object dbdtpAbertura: TDBDateTimePicker
         Left = 111
@@ -257,6 +257,16 @@ object FormCaixa: TFormCaixa
       Required = True
       Size = 1
     end
+    object zqCaixasUSUARIO: TStringField
+      FieldKind = fkData
+      FieldName = 'USUARIO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 50
+    end
   end
   object zcEstacionamento: TZConnection
     ControlsCodePage = cCP_UTF8
@@ -285,10 +295,10 @@ object FormCaixa: TFormCaixa
     InsertSQL.Strings = (
       'INSERT INTO caixas'
       '  (ID, DATA_ABERTURA, DATA_FECHAMENTO, VALOR_ABERTURA, VALOR_FECHAMENTO, '
-      '   ATIVO)'
+      '   ATIVO, USUARIO)'
       'VALUES'
       '  (:ID, :DATA_ABERTURA, :DATA_FECHAMENTO, :VALOR_ABERTURA, :VALOR_FECHAMENTO, '
-      '   :ATIVO)'
+      '   :ATIVO, :USUARIO)'
     )
     ModifySQL.Strings = (
       'UPDATE caixas SET'
@@ -297,7 +307,8 @@ object FormCaixa: TFormCaixa
       '  DATA_FECHAMENTO = :DATA_FECHAMENTO,'
       '  VALOR_ABERTURA = :VALOR_ABERTURA,'
       '  VALOR_FECHAMENTO = :VALOR_FECHAMENTO,'
-      '  ATIVO = :ATIVO'
+      '  ATIVO = :ATIVO,'
+      '  USUARIO = :USUARIO'
       'WHERE'
       '  ((caixas.ID IS NULL AND :OLD_ID IS NULL) OR (caixas.ID = :OLD_ID))'
     )
@@ -333,6 +344,11 @@ object FormCaixa: TFormCaixa
       item
         DataType = ftUnknown
         Name = 'ATIVO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'USUARIO'
         ParamType = ptUnknown
       end    
       item

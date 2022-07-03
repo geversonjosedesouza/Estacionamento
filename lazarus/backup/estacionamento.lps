@@ -11,7 +11,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="5"/>
         <CursorPos Y="24"/>
-        <UsageCount Value="175"/>
+        <UsageCount Value="177"/>
       </Unit>
       <Unit>
         <Filename Value="view\frmprincipal.pas"/>
@@ -20,10 +20,12 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="frmPrincipal"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="43"/>
-        <CursorPos X="13" Y="54"/>
-        <UsageCount Value="175"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="52"/>
+        <CursorPos X="48" Y="55"/>
+        <UsageCount Value="177"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="view\frmveiculo.pas"/>
@@ -31,10 +33,10 @@
         <ComponentName Value="FormVeiculo"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="64"/>
-        <CursorPos Y="70"/>
-        <UsageCount Value="175"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="36"/>
+        <CursorPos X="20" Y="38"/>
+        <UsageCount Value="177"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -44,10 +46,12 @@
         <ComponentName Value="FormTipoTempo"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="55"/>
-        <CursorPos X="15" Y="57"/>
-        <UsageCount Value="173"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="65"/>
+        <CursorPos X="22" Y="82"/>
+        <UsageCount Value="175"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="view\frmtabelapreco.pas"/>
@@ -55,10 +59,10 @@
         <ComponentName Value="FormTabelaPreco"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="66"/>
-        <CursorPos X="110" Y="81"/>
-        <UsageCount Value="169"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="51"/>
+        <CursorPos X="19" Y="89"/>
+        <UsageCount Value="171"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -69,79 +73,15 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="145"/>
-        <CursorPos Y="155"/>
-        <FoldState Value=" T4603 T7FFg T3iU0P1Z"/>
-        <UsageCount Value="158"/>
+        <TopLine Value="82"/>
+        <CursorPos X="36" Y="100"/>
+        <FoldState Value=" T4603 T3jI0OM"/>
+        <UsageCount Value="160"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="view\frmcaixa.pas"/>
-        <Caret Line="173" Column="25" TopLine="158"/>
-      </Position>
-      <Position>
-        <Filename Value="view\frmcaixa.pas"/>
-        <Caret Line="88" TopLine="75"/>
-      </Position>
-      <Position>
-        <Filename Value="view\frmcaixa.pas"/>
-        <Caret Line="143" Column="29" TopLine="128"/>
-      </Position>
-      <Position>
-        <Filename Value="view\frmcaixa.pas"/>
-        <Caret Line="144" Column="29" TopLine="143"/>
-      </Position>
-      <Position>
-        <Filename Value="view\frmcaixa.pas"/>
-        <Caret Line="143" Column="29" TopLine="141"/>
-      </Position>
-      <Position>
-        <Filename Value="view\frmcaixa.pas"/>
-        <Caret Line="144" Column="29" TopLine="143"/>
-      </Position>
-      <Position>
-        <Filename Value="view\frmcaixa.pas"/>
-        <Caret Line="145" Column="29" TopLine="145"/>
-      </Position>
-      <Position>
-        <Filename Value="view\frmcaixa.pas"/>
-        <Caret Line="155" TopLine="149"/>
-      </Position>
-      <Position>
-        <Filename Value="view\frmcaixa.pas"/>
-        <Caret Line="156" TopLine="149"/>
-      </Position>
-      <Position>
-        <Filename Value="view\frmcaixa.pas"/>
-        <Caret Line="158" TopLine="149"/>
-      </Position>
-      <Position>
-        <Filename Value="view\frmcaixa.pas"/>
-        <Caret Line="159" TopLine="149"/>
-      </Position>
-      <Position>
-        <Filename Value="view\frmcaixa.pas"/>
-        <Caret Line="161" TopLine="149"/>
-      </Position>
-      <Position>
-        <Filename Value="view\frmcaixa.pas"/>
-        <Caret Line="162" TopLine="149"/>
-      </Position>
-      <Position>
-        <Filename Value="view\frmcaixa.pas"/>
-        <Caret Line="163" TopLine="149"/>
-      </Position>
-      <Position>
-        <Filename Value="view\frmcaixa.pas"/>
-        <Caret Line="164" TopLine="149"/>
-      </Position>
-      <Position>
-        <Filename Value="view\frmcaixa.pas"/>
-        <Caret Line="165" TopLine="149"/>
-      </Position>
       <Position>
         <Filename Value="view\frmcaixa.pas"/>
         <Caret Line="166" Column="45" TopLine="150"/>
@@ -198,6 +138,70 @@
         <Filename Value="view\frmcaixa.pas"/>
         <Caret Line="158" Column="28" TopLine="145"/>
       </Position>
+      <Position>
+        <Filename Value="view\frmtabelapreco.pas"/>
+        <Caret Line="44" Column="75" TopLine="36"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmveiculo.pas"/>
+        <Caret Line="42" TopLine="29"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmcaixa.pas"/>
+        <Caret Line="52" Column="10" TopLine="48"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmtipotempo.pas"/>
+        <Caret Line="38" Column="70" TopLine="26"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmprincipal.pas"/>
+        <Caret Line="32" Column="5" TopLine="26"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmprincipal.pas"/>
+        <Caret Line="80" Column="23" TopLine="63"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmcaixa.pas"/>
+        <Caret Line="130" Column="42" TopLine="71"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmcaixa.pas"/>
+        <Caret Line="129" Column="42" TopLine="70"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmcaixa.pas"/>
+        <Caret Line="128" Column="42" TopLine="69"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmcaixa.pas"/>
+        <Caret Line="127" Column="42" TopLine="68"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmcaixa.pas"/>
+        <Caret Line="126" Column="42" TopLine="67"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmcaixa.pas"/>
+        <Caret Line="125" Column="42" TopLine="66"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmcaixa.pas"/>
+        <Caret Line="124" Column="42" TopLine="65"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmcaixa.pas"/>
+        <Caret Line="131" Column="42" TopLine="71"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmcaixa.pas"/>
+        <Caret Line="101" Column="36" TopLine="83"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmcaixa.pas"/>
+        <Caret Line="100" Column="36" TopLine="82"/>
+      </Position>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
@@ -205,15 +209,6 @@
     </RunParams>
   </ProjectSession>
   <Debugging>
-    <BreakPoints>
-      <Item>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="view\frmcaixa.pas"/>
-        <Line Value="155"/>
-      </Item>
-    </BreakPoints>
     <Watches>
       <Item>
         <Expression Value="

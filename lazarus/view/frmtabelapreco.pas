@@ -38,8 +38,10 @@ type
     procedure zqTabelaPrecosAfterPost(DataSet: TDataSet);
     procedure zqTabelaPrecosBeforePost(DataSet: TDataSet);
   private
+    usuario: String;
     procedure Criticas;
   public
+    constructor Create(AOwner: TComponent;  login: String); overload;
 
   end;
 
@@ -81,6 +83,12 @@ begin
      intOk:= Application.MessageBox('Marque o status do preço a ser criado!', 'Atenção', MB_ICONEXCLAMATION);
   if intOk <> 0 then
      Abort;
+end;
+
+constructor TFormTabelaPreco.Create(AOwner: TComponent; login: String);
+begin
+  inherited Create(AOwner);
+  usuario:= login;
 end;
 
 end.

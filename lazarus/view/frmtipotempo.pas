@@ -31,9 +31,11 @@ type
     procedure zqTiposTempoAfterPost(DataSet: TDataSet);
     procedure zqTiposTempoBeforePost(DataSet: TDataSet);
   private
+    usuario: string;
     procedure Criticas;
 
   public
+    constructor Create(AOwner: TComponent; login: string); overload;
 
   end;
 
@@ -72,6 +74,12 @@ begin
      intOk:= Application.MessageBox('Marque o status do tipo do tempo a ser criado!', 'Atenção', MB_ICONEXCLAMATION);
   if intOk <> 0 then
      Abort;
+end;
+
+constructor TFormTipoTempo.Create(AOwner: TComponent; login: string);
+begin
+  inherited Create(AOwner);
+  usuario := login;
 end;
 
 end.

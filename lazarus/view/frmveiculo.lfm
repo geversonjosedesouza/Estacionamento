@@ -11,6 +11,7 @@ object FormVeiculo: TFormVeiculo
   PopupMode = pmExplicit
   PopupParent = FormPrincipal.Owner
   Position = poMainFormCenter
+  LCLVersion = '2.2.2.0'
   object pnlVeiculos: TPanel
     Left = 0
     Height = 357

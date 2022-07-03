@@ -7,6 +7,7 @@ object FormPrincipal: TFormPrincipal
   FormStyle = fsMDIForm
   Menu = mmPrincipal
   Position = poDesktopCenter
+  LCLVersion = '2.2.2.0'
   object mmPrincipal: TMainMenu
     Left = 8
     Top = 8

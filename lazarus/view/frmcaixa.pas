@@ -41,6 +41,7 @@ type
     zqCaixasDATA_ABERTURA: TDateTimeField;
     zqCaixasDATA_FECHAMENTO: TDateTimeField;
     zqCaixasID: TLongintField;
+    zqCaixasUSUARIO: TStringField;
     zqCaixasVALOR_ABERTURA: TFloatField;
     zqCaixasVALOR_FECHAMENTO: TFloatField;
     zroqFechamento: TZReadOnlyQuery;
@@ -50,10 +51,12 @@ type
     procedure FormActivate(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
   private
+    usuario: string;
     procedure MovimentarCaixa(Movimento: string);
     procedure Criticas(Movimento: string);
 
   public
+    constructor Create(AOwner: TComponent; login: string); overload;
 
   end;
 
@@ -94,6 +97,7 @@ begin
       zqCaixasDATA_FECHAMENTO.Value := bdsCaixasDATA_FECHAMENTO.Value;
       zqCaixasVALOR_FECHAMENTO.Value := bdsCaixasVALOR_FECHAMENTO.Value;
     end;
+    zqCaixasUSUARIO.Value:= usuario;
     zqCaixas.Post;
   end;
 end;
@@ -122,6 +126,12 @@ begin
   end;
   if intOk <> 0 then
     Abort;
+end;
+
+constructor TFormCaixa.Create(AOwner: TComponent; login: string);
+begin
+  inherited Create(AOwner);
+  usuario := login;
 end;
 
 procedure TFormCaixa.FormActivate(Sender: TObject);

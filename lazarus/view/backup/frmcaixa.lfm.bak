@@ -1,12 +1,12 @@
 object FormCaixa: TFormCaixa
   Left = 286
-  Height = 213
+  Height = 239
   Top = 31
-  Width = 278
+  Width = 270
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Caixa'
-  ClientHeight = 213
-  ClientWidth = 278
+  ClientHeight = 239
+  ClientWidth = 270
   FormStyle = fsMDIChild
   OnActivate = FormActivate
   OnClose = FormClose
@@ -15,27 +15,27 @@ object FormCaixa: TFormCaixa
   Position = poMainFormCenter
   object pnlCaixa: TPanel
     Left = 0
-    Height = 213
+    Height = 239
     Top = 0
-    Width = 278
+    Width = 270
     Align = alClient
-    ClientHeight = 213
-    ClientWidth = 278
+    ClientHeight = 239
+    ClientWidth = 270
     TabOrder = 0
     object pnlInfo: TPanel
       Left = 1
       Height = 50
       Top = 1
-      Width = 276
+      Width = 268
       Align = alTop
       ClientHeight = 50
-      ClientWidth = 276
+      ClientWidth = 268
       TabOrder = 0
       object lblSituacao: TLabel
         Left = 1
         Height = 37
         Top = 1
-        Width = 274
+        Width = 266
         Align = alTop
         Alignment = taCenter
         Caption = 'situação'
@@ -47,13 +47,13 @@ object FormCaixa: TFormCaixa
     end
     object pnlForm: TPanel
       Left = 1
-      Height = 162
+      Height = 188
       Top = 51
-      Width = 276
+      Width = 268
       Align = alTop
       Anchors = [akTop, akLeft, akRight, akBottom]
-      ClientHeight = 162
-      ClientWidth = 276
+      ClientHeight = 188
+      ClientWidth = 268
       TabOrder = 1
       object dbdtpAbertura: TDBDateTimePicker
         Left = 111
@@ -166,14 +166,14 @@ object FormCaixa: TFormCaixa
       object btnConfirmar: TButton
         Left = 76
         Height = 25
-        Top = 138
+        Top = 163
         Width = 75
         Caption = 'Confirmar'
         OnClick = btnConfirmarClick
         TabOrder = 4
       end
       object DBCheckBox1: TDBCheckBox
-        Left = 3
+        Left = 46
         Height = 23
         Top = 136
         Width = 53
@@ -256,6 +256,16 @@ object FormCaixa: TFormCaixa
       ReadOnly = False
       Required = True
       Size = 1
+    end
+    object zqCaixasUSUARIO: TStringField
+      FieldKind = fkData
+      FieldName = 'USUARIO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 50
     end
   end
   object zcEstacionamento: TZConnection

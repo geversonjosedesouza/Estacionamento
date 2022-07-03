@@ -58,7 +58,7 @@ end;
 
 procedure TFormVeiculo.zqVEICULOSAfterPost(DataSet: TDataSet);
 begin
-  dbgVeiculos.Refresh;
+  dbgVeiculos.DataSource.DataSet.Refresh;
 end;
 
 procedure TFormVeiculo.zqVEICULOSBeforePost(DataSet: TDataSet);

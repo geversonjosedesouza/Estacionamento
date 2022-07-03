@@ -29,8 +29,10 @@ type
     procedure mniTiposTempoClick(Sender: TObject);
     procedure mniVeiculosClick(Sender: TObject);
   private
+    usuario: string;
 
   public
+    constructor Create(AOwner: TComponent; login: string = 'Não autenticado'); overload;
 
   end;
 
@@ -50,7 +52,7 @@ end;
 
 procedure TFormPrincipal.mniCaixaClick(Sender: TObject);
 begin
-   FormCaixa := TFormCaixa.Create(Application);
+   FormCaixa := TFormCaixa.Create(Self, usuario);
    FormCaixa.Show;
 end;
 
@@ -70,6 +72,12 @@ procedure TFormPrincipal.mniVeiculosClick(Sender: TObject);
 begin
   FormVeiculo := TFormVeiculo.Create(Application);
   FormVeiculo.Show;
+end;
+
+constructor TFormPrincipal.Create(AOwner: TComponent; login: string);
+begin
+  inherited Create(AOwner);
+  usuario := login;
 end;
 
 end.
