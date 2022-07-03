@@ -88,7 +88,7 @@ object FormTabelaPreco: TFormTabelaPreco
         Left = 21
         Height = 15
         Top = 58
-        Width = 6
+        Width = 12
         DataField = 'ID'
         DataSource = dsTabelaPrecos
         ParentColor = False

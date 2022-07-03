@@ -26,6 +26,12 @@
     </RunParams>
     <RequiredPackages>
       <Item>
+        <PackageName Value="MemDSLaz"/>
+      </Item>
+      <Item>
+        <PackageName Value="DateTimeCtrls"/>
+      </Item>
+      <Item>
         <PackageName Value="zcomponent"/>
       </Item>
       <Item>
@@ -69,6 +75,13 @@
         <Filename Value="view\frmtabelapreco.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FormTabelaPreco"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\frmcaixa.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormCaixa"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit>

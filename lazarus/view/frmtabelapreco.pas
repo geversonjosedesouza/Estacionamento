@@ -36,7 +36,6 @@ type
     zusqlTabelaPreco: TZUpdateSQL;
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure zqTabelaPrecosAfterPost(DataSet: TDataSet);
-    procedure zqTabelaPrecosBeforeDelete(DataSet: TDataSet);
     procedure zqTabelaPrecosBeforePost(DataSet: TDataSet);
   private
     procedure Criticas;
@@ -61,12 +60,6 @@ end;
 procedure TFormTabelaPreco.zqTabelaPrecosAfterPost(DataSet: TDataSet);
 begin
   dbgTabelaPrecos.DataSource.DataSet.Refresh;
-end;
-
-procedure TFormTabelaPreco.zqTabelaPrecosBeforeDelete(DataSet: TDataSet);
-begin
-     if IDNO = Application.MessageBox('Tem certeza que deseja excluir?', 'Atenção', MB_ICONQUESTION + MB_YESNO) then
-        Abort;
 end;
 
 procedure TFormTabelaPreco.zqTabelaPrecosBeforePost(DataSet: TDataSet);
