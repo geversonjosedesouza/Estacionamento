@@ -88,7 +88,7 @@ object FormTabelaPreco: TFormTabelaPreco
         Left = 21
         Height = 15
         Top = 58
-        Width = 12
+        Width = 6
         DataField = 'ID'
         DataSource = dsTabelaPrecos
         ParentColor = False
@@ -172,7 +172,7 @@ object FormTabelaPreco: TFormTabelaPreco
           end        
           item
             Title.Caption = 'Tempo'
-            FieldName = 'TIPOS_TEMPO_ID'
+            FieldName = 'DESCRICAO'
           end        
           item
             Title.Alignment = taCenter
@@ -209,11 +209,14 @@ object FormTabelaPreco: TFormTabelaPreco
     AfterPost = zqTabelaPrecosAfterPost
     Active = True
     SQL.Strings = (
-      'SELECT'
-      '  tp.*,'
-      'case when tp.ativo = 1 then ''Ativo'' else ''Inativo'' end as status'
-      'FROM'
-      '   TABELA_PRECOS AS TP'
+      'SELECT tp.*,'
+      '       CASE'
+      '           WHEN tp.ativo = 1 THEN ''Ativo'''
+      '           ELSE ''Inativo'''
+      '       END AS status,'
+      '       tt.descricao'
+      'FROM TABELA_PRECOS AS TP'
+      'INNER JOIN tipos_tempo AS tt ON (tt.id = TP.TIPOS_TEMPO_ID)'
     )
     Params = <>
     Left = 108

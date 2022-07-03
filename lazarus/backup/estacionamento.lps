@@ -69,8 +69,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="159"/>
-        <CursorPos X="42" Y="168"/>
+        <TopLine Value="145"/>
+        <CursorPos Y="155"/>
         <FoldState Value=" T4603 T7FFg T3iU0P1Z"/>
         <UsageCount Value="158"/>
         <Loaded Value="True"/>
@@ -78,10 +78,6 @@
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="view\frmcaixa.pas"/>
-        <Caret Line="172" Column="25" TopLine="157"/>
-      </Position>
       <Position>
         <Filename Value="view\frmcaixa.pas"/>
         <Caret Line="173" Column="25" TopLine="158"/>
@@ -196,7 +192,11 @@
       </Position>
       <Position>
         <Filename Value="view\frmcaixa.pas"/>
-        <Caret Line="168" TopLine="152"/>
+        <Caret Line="168" Column="42" TopLine="159"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmcaixa.pas"/>
+        <Caret Line="158" Column="28" TopLine="145"/>
       </Position>
     </JumpHistory>
     <RunParams>
