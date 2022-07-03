@@ -2,40 +2,39 @@ object FormTipoTempo: TFormTipoTempo
   Left = 257
   Height = 256
   Top = 31
-  Width = 406
+  Width = 707
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Tipos de Tempo'
   ClientHeight = 256
-  ClientWidth = 406
+  ClientWidth = 707
   FormStyle = fsMDIChild
   OnClose = FormClose
   PopupMode = pmExplicit
   PopupParent = FormPrincipal.Owner
   Position = poMainFormCenter
-  LCLVersion = '2.2.2.0'
   object pnlTipoTempo: TPanel
     Left = 0
     Height = 256
     Top = 0
-    Width = 406
+    Width = 707
     Align = alClient
     ClientHeight = 256
-    ClientWidth = 406
+    ClientWidth = 707
     TabOrder = 0
     object pnlForm: TPanel
       Left = 1
       Height = 79
       Top = 1
-      Width = 404
+      Width = 705
       Align = alTop
       ClientHeight = 79
-      ClientWidth = 404
+      ClientWidth = 705
       TabOrder = 0
       object DBNavigator1: TDBNavigator
         Left = 1
         Height = 25
         Top = 1
-        Width = 402
+        Width = 703
         Align = alTop
         BevelOuter = bvNone
         ChildSizing.EnlargeHorizontal = crsScaleChilds
@@ -45,8 +44,8 @@ object FormTipoTempo: TFormTipoTempo
         ChildSizing.Layout = cclLeftToRightThenTopToBottom
         ChildSizing.ControlsPerLine = 100
         ClientHeight = 25
-        ClientWidth = 402
-        DataSource = DataSource1
+        ClientWidth = 703
+        DataSource = dsTiposTempo
         Options = []
         TabOrder = 0
       end
@@ -56,17 +55,17 @@ object FormTipoTempo: TFormTipoTempo
         Top = 47
         Width = 80
         DataField = 'DESCRICAO'
-        DataSource = DataSource1
+        DataSource = dsTiposTempo
         MaxLength = 10
         TabOrder = 1
       end
       object dbtId: TDBText
         Left = 32
-        Height = 15
+        Height = 1
         Top = 55
-        Width = 6
+        Width = 1
         DataField = 'ID'
-        DataSource = DataSource1
+        DataSource = dsTiposTempo
         ParentColor = False
       end
       object lblId: TLabel
@@ -92,7 +91,7 @@ object FormTipoTempo: TFormTipoTempo
         Width = 52
         Caption = 'Ativo'
         DataField = 'ATIVO'
-        DataSource = DataSource1
+        DataSource = dsTiposTempo
         TabOrder = 2
         ValueChecked = '1'
         ValueUnchecked = '0'
@@ -102,16 +101,16 @@ object FormTipoTempo: TFormTipoTempo
       Left = 1
       Height = 176
       Top = 80
-      Width = 404
+      Width = 705
       Align = alTop
       ClientHeight = 176
-      ClientWidth = 404
+      ClientWidth = 705
       TabOrder = 1
       object dbgTipoTempo: TDBGrid
         Left = 1
         Height = 174
         Top = 1
-        Width = 402
+        Width = 703
         Align = alClient
         Color = clWindow
         Columns = <        
@@ -131,13 +130,28 @@ object FormTipoTempo: TFormTipoTempo
             Title.Caption = 'Status'
             Width = 50
             FieldName = 'STATUS'
+          end        
+          item
+            Title.Alignment = taCenter
+            Title.Caption = 'Usuário Operação'
+            Width = 100
+            FieldName = 'USUARIO'
           end>
-        DataSource = DataSource1
+        DataSource = dsTiposTempo
         TabOrder = 0
+      end
+      object DBGrid1: TDBGrid
+        Left = 384
+        Height = 100
+        Top = 24
+        Width = 200
+        Color = clWindow
+        Columns = <>
+        TabOrder = 1
       end
     end
   end
-  object ZConnection1: TZConnection
+  object zcEstacionamento: TZConnection
     ControlsCodePage = cCP_UTF8
     AutoEncodeStrings = True
     Properties.Strings = (
@@ -156,8 +170,9 @@ object FormTipoTempo: TFormTipoTempo
     Top = 192
   end
   object zqTiposTempo: TZQuery
-    Connection = ZConnection1
-    UpdateObject = ZUpdateSQL1
+    Connection = zcEstacionamento
+    UpdateObject = zuTiposTempo
+    AfterInsert = zqTiposTempoAfterInsert
     BeforePost = zqTiposTempoBeforePost
     AfterPost = zqTiposTempoAfterPost
     Active = True
@@ -172,7 +187,7 @@ object FormTipoTempo: TFormTipoTempo
     Left = 80
     Top = 192
   end
-  object ZUpdateSQL1: TZUpdateSQL
+  object zuTiposTempo: TZUpdateSQL
     DeleteSQL.Strings = (
       'DELETE FROM TIPOS_TEMPO'
       'WHERE'
@@ -180,15 +195,16 @@ object FormTipoTempo: TFormTipoTempo
     )
     InsertSQL.Strings = (
       'INSERT INTO TIPOS_TEMPO'
-      '  (ID, DESCRICAO, ATIVO)'
+      '  (ID, DESCRICAO, ATIVO, USUARIO)'
       'VALUES'
-      '  (:ID, :DESCRICAO, :ATIVO)'
+      '  (:ID, :DESCRICAO, :ATIVO, :USUARIO)'
     )
     ModifySQL.Strings = (
       'UPDATE TIPOS_TEMPO SET'
       '  ID = :ID,'
       '  DESCRICAO = :DESCRICAO,'
-      '  ATIVO = :ATIVO'
+      '  ATIVO = :ATIVO,'
+      '  USUARIO = :USUARIO'
       'WHERE'
       '  ((TIPOS_TEMPO.ID IS NULL AND :OLD_ID IS NULL) OR (TIPOS_TEMPO.ID = :OLD_ID))'
     )
@@ -213,11 +229,16 @@ object FormTipoTempo: TFormTipoTempo
       end    
       item
         DataType = ftUnknown
+        Name = 'USUARIO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
         Name = 'OLD_ID'
         ParamType = ptUnknown
       end>
   end
-  object DataSource1: TDataSource
+  object dsTiposTempo: TDataSource
     DataSet = zqTiposTempo
     Left = 224
     Top = 192
