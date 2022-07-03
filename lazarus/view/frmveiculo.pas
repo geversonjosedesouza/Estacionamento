@@ -33,6 +33,7 @@ type
     zqVEICULOS: TZQuery;
     zuVEICULOS: TZUpdateSQL;
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure zqVEICULOSAfterInsert(DataSet: TDataSet);
     procedure zqVEICULOSAfterPost(DataSet: TDataSet);
     procedure zqVEICULOSBeforePost(DataSet: TDataSet);
   private
@@ -55,6 +56,11 @@ implementation
 procedure TFormVeiculo.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
   FormVeiculo.Free;
+end;
+
+procedure TFormVeiculo.zqVEICULOSAfterInsert(DataSet: TDataSet);
+begin
+  zqVEICULOS.FieldByName('USUARIO').Value := usuario;
 end;
 
 procedure TFormVeiculo.zqVEICULOSAfterPost(DataSet: TDataSet);

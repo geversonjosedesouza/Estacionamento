@@ -6,7 +6,8 @@ CREATE TABLE VEICULOS (
     ID                INTEGER,
     DESCRICAO         VARCHAR(50) NOT NULL,
     TEBELA_PRECOS_ID  INTEGER NOT NULL,
-    ATIVO             CHAR(1) NOT NULL
+    ATIVO             CHAR(1) NOT NULL,
+    USUARIO           VARCHAR(50) NOT NULL
 );
 
 SET TERM ^ ;

@@ -20,9 +20,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="frmPrincipal"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="52"/>
-        <CursorPos X="61" Y="61"/>
+        <TopLine Value="55"/>
+        <CursorPos X="53" Y="73"/>
         <UsageCount Value="181"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -33,9 +32,10 @@
         <ComponentName Value="FormVeiculo"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="36"/>
-        <CursorPos X="20" Y="38"/>
+        <TopLine Value="60"/>
+        <CursorPos X="13" Y="63"/>
         <UsageCount Value="181"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -60,8 +60,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="3"/>
-        <CursorPos X="17" Y="65"/>
+        <TopLine Value="51"/>
+        <CursorPos X="6" Y="64"/>
         <UsageCount Value="175"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -79,7 +79,7 @@
         <UsageCount Value="164"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="4">
+    <JumpHistory HistoryIndex="5">
       <Position>
         <Filename Value="view\frmtabelapreco.pas"/>
         <Caret Line="44" Column="75" TopLine="36"/>
@@ -99,6 +99,10 @@
       <Position>
         <Filename Value="view\frmtabelapreco.pas"/>
         <Caret Line="95" Column="19" TopLine="80"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmveiculo.pas"/>
+        <Caret Line="39" Column="20" TopLine="36"/>
       </Position>
     </JumpHistory>
     <RunParams>
