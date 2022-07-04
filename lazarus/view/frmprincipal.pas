@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ComCtrls, Menus,
   //Fromulários
-  frmveiculo, frmtipotempo, frmtabelapreco, frmcaixa;
+  frmveiculo, frmtipotempo, frmtabelapreco, frmcaixa, frmregistroveiculo;
 
 type
 
@@ -24,6 +24,7 @@ type
     mniCadastro: TMenuItem;
     mniOperacoes: TMenuItem;
     procedure mniCaixaClick(Sender: TObject);
+    procedure mniEntradaSaidaClick(Sender: TObject);
     procedure mniSairClick(Sender: TObject);
     procedure mniTabelaPrecoClick(Sender: TObject);
     procedure mniTiposTempoClick(Sender: TObject);
@@ -54,6 +55,12 @@ procedure TFormPrincipal.mniCaixaClick(Sender: TObject);
 begin
    FormCaixa := TFormCaixa.Create(Self, usuario);
    FormCaixa.Show;
+end;
+
+procedure TFormPrincipal.mniEntradaSaidaClick(Sender: TObject);
+begin
+  FormRegistroVeiculo := TFormRegistroVeiculo.Create(Self, usuario);
+  FormRegistroVeiculo.Show;
 end;
 
 procedure TFormPrincipal.mniTabelaPrecoClick(Sender: TObject);

@@ -11,7 +11,7 @@ uses
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, zcomponent, tachartlazaruspkg, datetimectrls, memdslaz, frmPrincipal,
-  frmveiculo, frmtipotempo, frmtabelapreco, frmcaixa
+  frmveiculo, frmtipotempo, frmtabelapreco, frmcaixa, frmregistroveiculo
   { you can add units after this };
 
 {$R *.res}
@@ -25,6 +25,7 @@ begin
   Application.CreateForm(TFormTipoTempo, FormTipoTempo);
   Application.CreateForm(TFormTabelaPreco, FormTabelaPreco);
   Application.CreateForm(TFormCaixa, FormCaixa);
+  Application.CreateForm(TFormRegistroVeiculo, FormRegistroVeiculo);
   Application.Run;
 end.
 

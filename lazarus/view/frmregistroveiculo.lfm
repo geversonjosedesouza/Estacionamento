@@ -1,0 +1,339 @@
+object FormRegistroVeiculo: TFormRegistroVeiculo
+  Left = 286
+  Height = 370
+  Top = 31
+  Width = 731
+  Caption = 'Entradas e Saídas de Veículos'
+  ClientHeight = 370
+  ClientWidth = 731
+  FormStyle = fsMDIChild
+  OnClose = FormClose
+  OnCreate = FormCreate
+  PopupMode = pmExplicit
+  PopupParent = FormPrincipal.Owner
+  Position = poMainFormCenter
+  object pnlRegistroVeiculos: TPanel
+    Left = 0
+    Height = 370
+    Top = 0
+    Width = 731
+    Align = alClient
+    ClientHeight = 370
+    ClientWidth = 731
+    TabOrder = 0
+    object pnlForm: TPanel
+      Left = 1
+      Height = 106
+      Top = 1
+      Width = 729
+      Align = alTop
+      ClientHeight = 106
+      ClientWidth = 729
+      TabOrder = 0
+      object dbnControles: TDBNavigator
+        Left = 1
+        Height = 25
+        Top = 1
+        Width = 727
+        Align = alTop
+        BevelOuter = bvNone
+        ChildSizing.EnlargeHorizontal = crsScaleChilds
+        ChildSizing.EnlargeVertical = crsScaleChilds
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 100
+        ClientHeight = 25
+        ClientWidth = 727
+        DataSource = dsRegistroVeiculo
+        Options = []
+        TabOrder = 0
+      end
+      object dbePLACA: TDBEdit
+        Left = 71
+        Height = 23
+        Top = 58
+        Width = 113
+        DataField = 'PLACA'
+        DataSource = dsRegistroVeiculo
+        MaxLength = 8
+        TabOrder = 1
+      end
+      object stxtPlaca: TStaticText
+        Left = 71
+        Height = 17
+        Top = 33
+        Width = 41
+        Caption = 'Placa:'
+        TabOrder = 2
+      end
+      object lblTipoTempo: TLabel
+        Left = 238
+        Height = 15
+        Top = 41
+        Width = 39
+        Caption = 'Tempo:'
+        ParentColor = False
+      end
+      object dblcbVeiculos: TDBLookupComboBox
+        Left = 238
+        Height = 23
+        Top = 59
+        Width = 162
+        DataField = 'VEICULOS_ID'
+        DataSource = dsRegistroVeiculo
+        KeyField = 'ID'
+        ListField = 'DESCRICAO'
+        ListFieldIndex = 0
+        ListSource = dsVeiculos
+        LookupCache = False
+        TabOrder = 3
+      end
+      object Button1: TButton
+        Left = 472
+        Height = 25
+        Top = 56
+        Width = 75
+        Caption = 'Button1'
+        OnClick = Button1Click
+        TabOrder = 4
+      end
+    end
+    object pnlDados: TPanel
+      Left = 1
+      Height = 262
+      Top = 107
+      Width = 729
+      Align = alClient
+      ClientHeight = 262
+      ClientWidth = 729
+      TabOrder = 1
+      object dbgRegistroVeiculos: TDBGrid
+        Left = 1
+        Height = 260
+        Top = 1
+        Width = 727
+        Align = alClient
+        Color = clWindow
+        Columns = <        
+          item
+            Title.Caption = 'Código'
+            Width = 50
+            FieldName = 'ID'
+          end        
+          item
+            Title.Caption = 'Placa'
+            FieldName = 'PLACA'
+          end        
+          item
+            Title.Caption = 'Dh. Entrada'
+            Width = 110
+            FieldName = 'ENTRADA'
+          end        
+          item
+            Title.Caption = 'Dh. Saída'
+            Width = 110
+            FieldName = 'SAIDA'
+          end        
+          item
+            Title.Caption = 'Valor'
+            FieldName = 'VALOR'
+            DisplayFormat = '#0.00'
+          end        
+          item
+            Title.Alignment = taCenter
+            Title.Caption = 'Descrição Veículo'
+            Width = 100
+            FieldName = 'DESCRICAO'
+          end        
+          item
+            Title.Caption = 'Usuário Operação'
+            Width = 100
+            FieldName = 'USUARIO'
+          end        
+          item
+            Alignment = taCenter
+            Title.Alignment = taCenter
+            Title.Caption = 'Status'
+            FieldName = 'STATUS'
+          end>
+        DataSource = dsRegistroVeiculo
+        ReadOnly = True
+        TabOrder = 0
+      end
+    end
+  end
+  object zqRegistroVeiculo: TZQuery
+    Connection = zcESTACIONAMENTO
+    UpdateObject = zusRegistroVeiculo
+    AfterInsert = zqRegistroVeiculoAfterInsert
+    BeforePost = zqRegistroVeiculoBeforePost
+    AfterPost = zqRegistroVeiculoAfterPost
+    Active = True
+    SQL.Strings = (
+      'SELECT rv.*,'
+      '        v.descricao,'
+      '       CASE'
+      '           WHEN rv.ativo = 1 THEN ''Ativo'''
+      '           ELSE ''Inativo'''
+      '       END AS status'
+      'FROM registros_veiculos AS rv'
+      'INNER JOIN caixas AS c ON (c.id = rv.caixas_id)'
+      'INNER JOIN veiculos AS v ON (v.id = rv.veiculos_id)'
+      'WHERE c.data_abertura IS NOT NULL'
+      '  AND c.data_fechamento IS NULL'
+    )
+    Params = <>
+    Left = 80
+    Top = 296
+  end
+  object zusRegistroVeiculo: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM registros_veiculos'
+      'WHERE'
+      '  ((registros_veiculos.ID IS NULL AND :OLD_ID IS NULL) OR (registros_veiculos.ID = :OLD_ID))'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO registros_veiculos'
+      '  (ID, ENTRADA, SAIDA, VEICULOS_ID, CAIXAS_ID, PLACA, VALOR, ATIVO, USUARIO)'
+      'VALUES'
+      '  (:ID, :ENTRADA, :SAIDA, :VEICULOS_ID, :CAIXAS_ID, :PLACA, :VALOR, :ATIVO, '
+      '   :USUARIO)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE registros_veiculos SET'
+      '  ID = :ID,'
+      '  ENTRADA = :ENTRADA,'
+      '  SAIDA = :SAIDA,'
+      '  VEICULOS_ID = :VEICULOS_ID,'
+      '  CAIXAS_ID = :CAIXAS_ID,'
+      '  PLACA = :PLACA,'
+      '  VALOR = :VALOR,'
+      '  ATIVO = :ATIVO,'
+      '  USUARIO = :USUARIO'
+      'WHERE'
+      '  ((registros_veiculos.ID IS NULL AND :OLD_ID IS NULL) OR (registros_veiculos.ID = :OLD_ID))'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    Left = 120
+    Top = 296
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ENTRADA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'SAIDA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'VEICULOS_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CAIXAS_ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PLACA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'VALOR'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ATIVO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'USUARIO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_ID'
+        ParamType = ptUnknown
+      end>
+  end
+  object dsRegistroVeiculo: TDataSource
+    DataSet = zqRegistroVeiculo
+    Left = 160
+    Top = 296
+  end
+  object zcESTACIONAMENTO: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    Properties.Strings = (
+      'AutoEncodeStrings=True'
+      'controls_cp=CP_UTF8'
+    )
+    Connected = True
+    HostName = 'localhost'
+    Port = 3050
+    Database = 'C:\projetos\Estacionamento\DB\ESTACIONAMENTO.FDB'
+    User = 'SYSDBA'
+    Password = 'masterkey'
+    Protocol = 'firebird-2.5'
+    LibraryLocation = 'C:\projetos\Estacionamento\lazarus\lib\fbclient.dll'
+    Left = 48
+    Top = 296
+  end
+  object zqVeiculos: TZQuery
+    Connection = zcESTACIONAMENTO
+    Active = True
+    SQL.Strings = (
+      'SELECT v.id,'
+      '       (v.descricao || '' - '' || tt.descricao) AS descricao'
+      'FROM veiculos AS v'
+      'INNER JOIN tabela_precos AS tp ON (v.tebela_precos_id = tp.id'
+      '                                   AND v.ativo = tp.ativo)'
+      'INNER JOIN tipos_tempo AS tt ON (tp.tipos_tempo_id = tt.id'
+      '                                 AND v.ativo = tt.ativo)'
+      'WHERE v.ativo = ''1'''
+    )
+    Params = <>
+    Left = 386
+    Top = 287
+  end
+  object dsVeiculos: TDataSource
+    DataSet = zqVeiculos
+    Left = 418
+    Top = 287
+  end
+  object zroqCaixaAbero: TZReadOnlyQuery
+    Connection = zcESTACIONAMENTO
+    Active = True
+    SQL.Strings = (
+      'SELECT c.ID'
+      'FROM caixas AS c'
+      'WHERE c.data_abertura IS NOT NULL'
+      '  AND c.data_fechamento IS NULL'
+    )
+    Params = <>
+    Left = 288
+    Top = 280
+    object zroqCaixaAberoID: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+    end
+  end
+end

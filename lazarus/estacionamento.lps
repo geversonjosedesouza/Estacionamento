@@ -9,9 +9,9 @@
         <Filename Value="estacionamento.lpr"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="5"/>
-        <CursorPos Y="24"/>
-        <UsageCount Value="181"/>
+        <TopLine Value="8"/>
+        <CursorPos X="33" Y="26"/>
+        <UsageCount Value="186"/>
       </Unit>
       <Unit>
         <Filename Value="view\frmprincipal.pas"/>
@@ -20,9 +20,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="frmPrincipal"/>
-        <TopLine Value="55"/>
-        <CursorPos X="53" Y="73"/>
-        <UsageCount Value="181"/>
+        <TopLine Value="52"/>
+        <CursorPos X="22" Y="63"/>
+        <UsageCount Value="186"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -32,13 +32,10 @@
         <ComponentName Value="FormVeiculo"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="60"/>
-        <CursorPos X="13" Y="63"/>
-        <UsageCount Value="181"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="53"/>
+        <CursorPos X="20" Y="58"/>
+        <UsageCount Value="186"/>
       </Unit>
       <Unit>
         <Filename Value="view\frmtipotempo.pas"/>
@@ -46,12 +43,10 @@
         <ComponentName Value="FormTipoTempo"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="54"/>
         <CursorPos X="3" Y="60"/>
-        <UsageCount Value="179"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <UsageCount Value="184"/>
       </Unit>
       <Unit>
         <Filename Value="view\frmtabelapreco.pas"/>
@@ -60,9 +55,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="51"/>
-        <CursorPos X="6" Y="64"/>
-        <UsageCount Value="175"/>
+        <TopLine Value="52"/>
+        <CursorPos X="47" Y="69"/>
+        <UsageCount Value="180"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -73,36 +68,150 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="82"/>
-        <CursorPos X="36" Y="100"/>
+        <TopLine Value="176"/>
+        <CursorPos X="33" Y="156"/>
         <FoldState Value=" T4603 T3jI0OM"/>
-        <UsageCount Value="164"/>
+        <UsageCount Value="169"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\frmregistroveiculo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormRegistroVeiculo"/>
+        <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="60"/>
+        <CursorPos X="29" Y="74"/>
+        <UsageCount Value="25"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\docs\xml\lcl\dialogs\inputquery.pas"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="5">
+    <JumpHistory HistoryIndex="29">
       <Position>
-        <Filename Value="view\frmtabelapreco.pas"/>
-        <Caret Line="44" Column="75" TopLine="36"/>
+        <Filename Value="view\frmregistroveiculo.pas"/>
+        <Caret Line="48" Column="22" TopLine="41"/>
       </Position>
       <Position>
-        <Filename Value="view\frmveiculo.pas"/>
-        <Caret Line="42" TopLine="29"/>
+        <Filename Value="view\frmregistroveiculo.pas"/>
+        <Caret Line="49" Column="22" TopLine="42"/>
       </Position>
       <Position>
-        <Filename Value="view\frmprincipal.pas"/>
-        <Caret Line="32" Column="5" TopLine="26"/>
+        <Filename Value="view\frmregistroveiculo.pas"/>
+        <Caret Line="54" Column="22" TopLine="47"/>
       </Position>
       <Position>
-        <Filename Value="view\frmprincipal.pas"/>
-        <Caret Line="80" Column="23" TopLine="63"/>
+        <Filename Value="view\frmregistroveiculo.pas"/>
+        <Caret Line="59" Column="60" TopLine="47"/>
       </Position>
       <Position>
-        <Filename Value="view\frmtabelapreco.pas"/>
-        <Caret Line="95" Column="19" TopLine="80"/>
+        <Filename Value="view\frmregistroveiculo.pas"/>
+        <Caret Line="71" Column="3" TopLine="51"/>
       </Position>
       <Position>
-        <Filename Value="view\frmveiculo.pas"/>
-        <Caret Line="39" Column="20" TopLine="36"/>
+        <Filename Value="view\frmregistroveiculo.pas"/>
+        <Caret Line="9" Column="68" TopLine="53"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmregistroveiculo.pas"/>
+        <Caret Line="68" Column="12" TopLine="53"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmregistroveiculo.pas"/>
+        <Caret Line="69" Column="12" TopLine="54"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmregistroveiculo.pas"/>
+        <Caret Line="76" Column="12" TopLine="56"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmregistroveiculo.pas"/>
+        <Caret Line="63" TopLine="58"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmregistroveiculo.pas"/>
+        <Caret Line="64" TopLine="58"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmregistroveiculo.pas"/>
+        <Caret Line="69" TopLine="58"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmregistroveiculo.pas"/>
+        <Caret Line="63" TopLine="58"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmregistroveiculo.pas"/>
+        <Caret Line="64" TopLine="58"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmregistroveiculo.pas"/>
+        <Caret Line="69" TopLine="58"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmregistroveiculo.pas"/>
+        <Caret Line="63" TopLine="58"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmregistroveiculo.pas"/>
+        <Caret Line="64" TopLine="58"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmregistroveiculo.pas"/>
+        <Caret Line="66" TopLine="58"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmregistroveiculo.pas"/>
+        <Caret Line="67" Column="30" TopLine="52"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmregistroveiculo.pas"/>
+        <Caret Line="63" TopLine="52"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmregistroveiculo.pas"/>
+        <Caret Line="64" TopLine="52"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmregistroveiculo.pas"/>
+        <Caret Line="66" TopLine="52"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmregistroveiculo.pas"/>
+        <Caret Line="67" Column="11" TopLine="52"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmregistroveiculo.pas"/>
+        <Caret Line="63" TopLine="52"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmregistroveiculo.pas"/>
+        <Caret Line="64" TopLine="52"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmregistroveiculo.pas"/>
+        <Caret Line="66" TopLine="52"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmregistroveiculo.pas"/>
+        <Caret Line="67" Column="10" TopLine="52"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmregistroveiculo.pas"/>
+        <Caret Line="79" Column="77" TopLine="78"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmregistroveiculo.pas"/>
+        <Caret Line="86" Column="77" TopLine="85"/>
+      </Position>
+      <Position>
+        <Filename Value="view\frmregistroveiculo.pas"/>
+        <Caret Line="69" Column="46" TopLine="63"/>
       </Position>
     </JumpHistory>
     <RunParams>

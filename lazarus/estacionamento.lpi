@@ -85,6 +85,12 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit>
+      <Unit>
+        <Filename Value="view\frmregistroveiculo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormRegistroVeiculo"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
