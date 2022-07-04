@@ -42,8 +42,37 @@ INSERT INTO REGISTROS_VEICULOS
 VALUES
 (gen_id(gen_registros_veiculos_id,1), '3-JUL-2022 00:00:00', '3-JUL-2022 00:00:00', 5, 5, '123456', 2, 'S');
 */
-select * from registros_veiculos as rv;
-select SUM(rv.valor) as valor_fechamento from registros_veiculos as rv
-inner join caixas as c on (c.id = rv.caixas_id)
+select * from  caixas as cregistros_veiculos as rv;
+select SUM(rv.valor) as valor_fechamento from
+inner joinregistros_veiculos as rv on (c.id = rv.caixas_id)
 where    rv.ativo = 'S'  and
 rv.caixas_id=1
+
+--Registros Veículos
+SELECT rv.*,
+        v.descricao,
+       CASE
+           WHEN rv.ativo = 1 THEN 'Ativo'
+           ELSE 'Inativo'
+       END AS status,
+       c.*
+FROM registros_veiculos AS rv
+right JOIN caixas AS c ON (c.id = rv.caixas_id)
+right JOIN veiculos AS v ON (v.id = rv.veiculos_id)
+WHERE c.data_abertura IS NOT NULL
+  AND c.data_fechamento IS NULL
+
+ --Veículos
+ select * from tabela_precos as tp;
+  select * from tipos_tempo as tt;
+ select 
+    v.id,
+    (v.descricao || ' - ' || tt.descricao) as descricao
+from veiculos as v
+   inner join tabela_precos as tp on (v.tebela_precos_id = tp.id and v.ativo = tp.ativo)
+   inner join tipos_tempo as tt on (tp.tipos_tempo_id = tt.id and v.ativo = tt.ativo)
+   where v.ativo = '1'
+
+ select * from caixas AS c
+WHERE c.data_abertura IS NOT NULL
+  AND c.data_fechamento IS NULL

@@ -2,11 +2,11 @@ object FormTipoTempo: TFormTipoTempo
   Left = 257
   Height = 256
   Top = 31
-  Width = 707
+  Width = 427
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Tipos de Tempo'
   ClientHeight = 256
-  ClientWidth = 707
+  ClientWidth = 427
   FormStyle = fsMDIChild
   OnClose = FormClose
   PopupMode = pmExplicit
@@ -16,25 +16,25 @@ object FormTipoTempo: TFormTipoTempo
     Left = 0
     Height = 256
     Top = 0
-    Width = 707
+    Width = 427
     Align = alClient
     ClientHeight = 256
-    ClientWidth = 707
+    ClientWidth = 427
     TabOrder = 0
     object pnlForm: TPanel
       Left = 1
       Height = 79
       Top = 1
-      Width = 705
+      Width = 425
       Align = alTop
       ClientHeight = 79
-      ClientWidth = 705
+      ClientWidth = 425
       TabOrder = 0
       object DBNavigator1: TDBNavigator
         Left = 1
         Height = 25
         Top = 1
-        Width = 703
+        Width = 423
         Align = alTop
         BevelOuter = bvNone
         ChildSizing.EnlargeHorizontal = crsScaleChilds
@@ -44,7 +44,7 @@ object FormTipoTempo: TFormTipoTempo
         ChildSizing.Layout = cclLeftToRightThenTopToBottom
         ChildSizing.ControlsPerLine = 100
         ClientHeight = 25
-        ClientWidth = 703
+        ClientWidth = 423
         DataSource = dsTiposTempo
         Options = []
         TabOrder = 0
@@ -61,9 +61,9 @@ object FormTipoTempo: TFormTipoTempo
       end
       object dbtId: TDBText
         Left = 32
-        Height = 1
+        Height = 15
         Top = 55
-        Width = 1
+        Width = 6
         DataField = 'ID'
         DataSource = dsTiposTempo
         ParentColor = False
@@ -99,18 +99,18 @@ object FormTipoTempo: TFormTipoTempo
     end
     object pnlDados: TPanel
       Left = 1
-      Height = 176
+      Height = 175
       Top = 80
-      Width = 705
-      Align = alTop
-      ClientHeight = 176
-      ClientWidth = 705
+      Width = 425
+      Align = alClient
+      ClientHeight = 175
+      ClientWidth = 425
       TabOrder = 1
       object dbgTipoTempo: TDBGrid
         Left = 1
-        Height = 174
+        Height = 173
         Top = 1
-        Width = 703
+        Width = 423
         Align = alClient
         Color = clWindow
         Columns = <        

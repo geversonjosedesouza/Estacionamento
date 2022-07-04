@@ -1,11 +1,11 @@
 object FormCaixa: TFormCaixa
   Left = 286
-  Height = 239
+  Height = 252
   Top = 31
   Width = 270
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Caixa'
-  ClientHeight = 239
+  ClientHeight = 252
   ClientWidth = 270
   FormStyle = fsMDIChild
   OnActivate = FormActivate
@@ -15,11 +15,11 @@ object FormCaixa: TFormCaixa
   Position = poMainFormCenter
   object pnlCaixa: TPanel
     Left = 0
-    Height = 239
+    Height = 252
     Top = 0
     Width = 270
     Align = alClient
-    ClientHeight = 239
+    ClientHeight = 252
     ClientWidth = 270
     TabOrder = 0
     object pnlInfo: TPanel
@@ -33,10 +33,10 @@ object FormCaixa: TFormCaixa
       TabOrder = 0
       object lblSituacao: TLabel
         Left = 1
-        Height = 37
+        Height = 48
         Top = 1
         Width = 266
-        Align = alTop
+        Align = alClient
         Alignment = taCenter
         Caption = 'situação'
         Font.Height = -27
@@ -47,12 +47,11 @@ object FormCaixa: TFormCaixa
     end
     object pnlForm: TPanel
       Left = 1
-      Height = 188
+      Height = 200
       Top = 51
       Width = 268
-      Align = alTop
-      Anchors = [akTop, akLeft, akRight, akBottom]
-      ClientHeight = 188
+      Align = alClient
+      ClientHeight = 200
       ClientWidth = 268
       TabOrder = 1
       object dbdtpAbertura: TDBDateTimePicker
@@ -164,7 +163,7 @@ object FormCaixa: TFormCaixa
         ParentColor = False
       end
       object btnConfirmar: TButton
-        Left = 76
+        Left = 97
         Height = 25
         Top = 163
         Width = 75
@@ -182,8 +181,8 @@ object FormCaixa: TFormCaixa
         DataSource = dsCaixas
         Enabled = False
         TabOrder = 5
-        ValueChecked = 'S'
-        ValueUnchecked = 'N'
+        ValueChecked = '1'
+        ValueUnchecked = '0'
       end
     end
   end
@@ -418,11 +417,12 @@ object FormCaixa: TFormCaixa
   end
   object zroqFechamento: TZReadOnlyQuery
     Connection = zcEstacionamento
+    Active = True
     SQL.Strings = (
       'SELECT SUM(rv.valor) AS valor_fechamento'
-      'FROM registros_veiculos AS rv'
-      'INNER JOIN caixas AS c ON (c.id = rv.caixas_id)'
-      'WHERE rv.ativo = ''S'' AND rv.caixas_id=:pCAIXAS_ID'
+      'FROM caixas AS c'
+      'INNER JOIN registros_veiculos AS rv ON (c.id = rv.caixas_id)'
+      'WHERE rv.ativo = ''1'' AND rv.caixas_id=:pCAIXAS_ID'
     )
     Params = <    
       item
@@ -430,8 +430,8 @@ object FormCaixa: TFormCaixa
         Name = 'pCAIXAS_ID'
         ParamType = ptInput
       end>
-    Left = 185
-    Top = 179
+    Left = 80
+    Top = 8
     ParamData = <    
       item
         DataType = ftLargeint

@@ -153,7 +153,7 @@ begin
       dbdtpFechamento.Enabled := False;
       dbeValorFechamento.Enabled := False;
       //Dados
-      bdsCaixasATIVO.Value := 'S';
+      bdsCaixasATIVO.Value := '1';
       bdsCaixasDATA_ABERTURA.Value := Now;
       bdsCaixasVALOR_ABERTURA.Value := 0.00;
       bdsCaixasDATA_FECHAMENTO.Clear;
