@@ -58,7 +58,7 @@ end;
 
 procedure TFormPrincipal.mniTabelaPrecoClick(Sender: TObject);
 begin
-  FormTabelaPreco := TFormTabelaPreco.Create(Self, 'usuario');
+  FormTabelaPreco := TFormTabelaPreco.Create(Self, usuario);
   FormTabelaPreco.Show;
 end;
 
@@ -70,7 +70,7 @@ end;
 
 procedure TFormPrincipal.mniVeiculosClick(Sender: TObject);
 begin
-  FormVeiculo := TFormVeiculo.Create(Application);
+  FormVeiculo := TFormVeiculo.Create(Self, 'usuario');
   FormVeiculo.Show;
 end;
 
