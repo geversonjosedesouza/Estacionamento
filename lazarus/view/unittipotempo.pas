@@ -1,4 +1,4 @@
-unit frmtipotempo;
+unit unitTipoTempo;
 
 {$mode ObjFPC}{$H+}
 

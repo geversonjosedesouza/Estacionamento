@@ -12,6 +12,7 @@ object FormTipoTempo: TFormTipoTempo
   PopupMode = pmExplicit
   PopupParent = FormPrincipal.Owner
   Position = poMainFormCenter
+  LCLVersion = '2.2.2.0'
   object pnlTipoTempo: TPanel
     Left = 0
     Height = 256

@@ -1,4 +1,4 @@
-unit frmPrincipal;
+unit unitPrincipal;
 
 {$mode objfpc}{$H+}
 
@@ -6,8 +6,9 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ComCtrls, Menus,
+  Buttons,
   //Fromulários
-  frmveiculo, frmtipotempo, frmtabelapreco, frmcaixa, frmregistroveiculo;
+  unitVeiculo, unitTipoTempo, unitTabelaPreco, unitCaixa, unitRegistroVeiculo;
 
 type
 

@@ -13,6 +13,7 @@ object FormCaixa: TFormCaixa
   PopupMode = pmExplicit
   PopupParent = FormPrincipal.Owner
   Position = poMainFormCenter
+  LCLVersion = '2.2.2.0'
   object pnlCaixa: TPanel
     Left = 0
     Height = 252

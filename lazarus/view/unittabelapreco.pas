@@ -1,4 +1,4 @@
-unit frmtabelapreco;
+unit unitTabelaPreco;
 
 {$mode ObjFPC}{$H+}
 

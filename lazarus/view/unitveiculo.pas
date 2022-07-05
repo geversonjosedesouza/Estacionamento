@@ -1,4 +1,4 @@
-unit frmveiculo;
+unit unitVeiculo;
 
 {$mode ObjFPC}{$H+}
 
@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, SQLDB, DB, IBConnection, Forms, Controls, Graphics,
   Dialogs, StdCtrls, ExtCtrls, DBCtrls, Buttons, DBGrids, ZConnection, ZDataset,
-  ZSqlUpdate, TAIntervalSources, LCLType;
+  ZSqlUpdate, LCLType;
 
 type
 

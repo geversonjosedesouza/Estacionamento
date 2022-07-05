@@ -1,4 +1,4 @@
-unit frmregistroveiculo;
+unit unitRegistroVeiculo;
 
 {$mode ObjFPC}{$H+}
 

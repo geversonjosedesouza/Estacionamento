@@ -1,4 +1,4 @@
-unit frmcaixa;
+unit unitCaixa;
 
 {$mode ObjFPC}{$H+}
 
