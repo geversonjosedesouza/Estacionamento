@@ -48,55 +48,148 @@ object FormRegistroVeiculo: TFormRegistroVeiculo
         DataSource = dsRegistroVeiculo
         Options = []
         TabOrder = 0
+        VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbPost, nbCancel, nbRefresh]
       end
-      object dbePLACA: TDBEdit
-        Left = 71
-        Height = 23
-        Top = 58
-        Width = 113
-        DataField = 'PLACA'
-        DataSource = dsRegistroVeiculo
-        MaxLength = 8
+      object gbEntrada: TGroupBox
+        Left = 8
+        Height = 64
+        Top = 32
+        Width = 252
+        Caption = 'Entrada'
+        ClientHeight = 44
+        ClientWidth = 248
         TabOrder = 1
+        object dbePLACA: TDBEdit
+          Left = 10
+          Height = 23
+          Top = 16
+          Width = 85
+          DataField = 'PLACA'
+          DataSource = dsRegistroVeiculo
+          CharCase = ecUppercase
+          MaxLength = 8
+          TabOrder = 0
+        end
+        object stxtPlaca: TStaticText
+          Left = 8
+          Height = 17
+          Top = -2
+          Width = 42
+          Caption = 'Placa:'
+          TabOrder = 1
+        end
+        object lblTipoTempo: TLabel
+          Left = 106
+          Height = 15
+          Top = -2
+          Width = 39
+          Caption = 'Tempo:'
+          ParentColor = False
+        end
+        object dblcbVeiculos: TDBLookupComboBox
+          Left = 103
+          Height = 23
+          Top = 16
+          Width = 136
+          DataField = 'VEICULOS_ID'
+          DataSource = dsRegistroVeiculo
+          KeyField = 'ID'
+          ListField = 'DESCRICAO'
+          ListFieldIndex = 0
+          ListSource = dsVeiculos
+          LookupCache = False
+          TabOrder = 2
+        end
       end
-      object stxtPlaca: TStaticText
-        Left = 71
-        Height = 17
-        Top = 33
-        Width = 41
-        Caption = 'Placa:'
+      object gbSaida: TGroupBox
+        Left = 269
+        Height = 64
+        Top = 32
+        Width = 454
+        Caption = 'Saida'
+        ClientHeight = 44
+        ClientWidth = 450
         TabOrder = 2
-      end
-      object lblTipoTempo: TLabel
-        Left = 238
-        Height = 15
-        Top = 41
-        Width = 39
-        Caption = 'Tempo:'
-        ParentColor = False
-      end
-      object dblcbVeiculos: TDBLookupComboBox
-        Left = 238
-        Height = 23
-        Top = 59
-        Width = 162
-        DataField = 'VEICULOS_ID'
-        DataSource = dsRegistroVeiculo
-        KeyField = 'ID'
-        ListField = 'DESCRICAO'
-        ListFieldIndex = 0
-        ListSource = dsVeiculos
-        LookupCache = False
-        TabOrder = 3
-      end
-      object Button1: TButton
-        Left = 472
-        Height = 25
-        Top = 56
-        Width = 75
-        Caption = 'Button1'
-        OnClick = Button1Click
-        TabOrder = 4
+        object btnPagar: TButton
+          Left = 367
+          Height = 25
+          Top = 14
+          Width = 75
+          Caption = 'Pagar'
+          Enabled = False
+          OnClick = btnPagarClick
+          TabOrder = 0
+        end
+        object stxtCodigo: TStaticText
+          Left = 8
+          Height = 17
+          Top = -2
+          Width = 41
+          Caption = 'Código:'
+          TabOrder = 1
+        end
+        object lblPlaca: TLabel
+          Left = 94
+          Height = 15
+          Top = -2
+          Width = 31
+          Caption = 'Placa:'
+          ParentColor = False
+        end
+        object edtCodigo: TEdit
+          Left = 8
+          Height = 23
+          Top = 16
+          Width = 76
+          OnKeyPress = edtCodigoKeyPress
+          TabOrder = 2
+        end
+        object edtPlaca: TEdit
+          Left = 94
+          Height = 23
+          Top = 16
+          Width = 90
+          CharCase = ecUppercase
+          OnKeyPress = edtPlacaKeyPress
+          TabOrder = 3
+        end
+        object dbeValor: TDBEdit
+          Left = 277
+          Height = 23
+          Top = 16
+          Width = 80
+          DataField = 'VALOR_PAGAR'
+          DataSource = dsPagar
+          Alignment = taRightJustify
+          Enabled = False
+          MaxLength = 0
+          TabOrder = 4
+        end
+        object edtDinheiro: TEdit
+          Left = 192
+          Height = 23
+          Top = 16
+          Width = 76
+          Enabled = False
+          OnKeyPress = edtDinheiroKeyPress
+          TabOrder = 5
+        end
+        object stxtCodigo1: TStaticText
+          Left = 192
+          Height = 17
+          Top = -2
+          Width = 53
+          Caption = 'Dinheiro:'
+          TabOrder = 6
+        end
+        object stxtCodigo2: TStaticText
+          Left = 277
+          Height = 17
+          Top = -2
+          Width = 80
+          Caption = 'Valor a Pagar:'
+          TabOrder = 7
+        end
       end
     end
     object pnlDados: TPanel
@@ -184,7 +277,7 @@ object FormRegistroVeiculo: TFormRegistroVeiculo
       '  AND c.data_fechamento IS NULL'
     )
     Params = <>
-    Left = 80
+    Left = 90
     Top = 296
   end
   object zusRegistroVeiculo: TZUpdateSQL
@@ -271,7 +364,7 @@ object FormRegistroVeiculo: TFormRegistroVeiculo
   end
   object dsRegistroVeiculo: TDataSource
     DataSet = zqRegistroVeiculo
-    Left = 160
+    Left = 150
     Top = 296
   end
   object zcESTACIONAMENTO: TZConnection
@@ -306,13 +399,13 @@ object FormRegistroVeiculo: TFormRegistroVeiculo
       'WHERE v.ativo = ''1'''
     )
     Params = <>
-    Left = 386
-    Top = 287
+    Left = 232
+    Top = 296
   end
   object dsVeiculos: TDataSource
     DataSet = zqVeiculos
-    Left = 418
-    Top = 287
+    Left = 264
+    Top = 296
   end
   object zroqCaixaAbero: TZReadOnlyQuery
     Connection = zcESTACIONAMENTO
@@ -324,8 +417,8 @@ object FormRegistroVeiculo: TFormRegistroVeiculo
       '  AND c.data_fechamento IS NULL'
     )
     Params = <>
-    Left = 288
-    Top = 280
+    Left = 342
+    Top = 296
     object zroqCaixaAberoID: TLongintField
       FieldKind = fkData
       FieldName = 'ID'
@@ -335,5 +428,126 @@ object FormRegistroVeiculo: TFormRegistroVeiculo
       ReadOnly = True
       Required = False
     end
+  end
+  object zroqPagar: TZReadOnlyQuery
+    Connection = zcESTACIONAMENTO
+    Active = True
+    SQL.Strings = (
+      'SELECT rv.ID, rv.entrada,'
+      '       datediff (HOUR'
+      '                 FROM rv.entrada TO CURRENT_TIMESTAMP) AS tempo ,'
+      '       tp.valor ,'
+      '       (tp.quantidade * tp.valor) AS valor_tempo ,'
+      '       (datediff (HOUR'
+      '                  FROM rv.entrada TO CURRENT_TIMESTAMP) * (tp.quantidade * tp.valor)) AS valor_pagar'
+      'FROM registros_veiculos AS rv'
+      'INNER JOIN veiculos AS v ON (v.id = rv.veiculos_id'
+      '                             AND rv.ativo = v.ativo)'
+      'INNER JOIN tabela_precos AS tp ON (tp.id = v.tebela_precos_id'
+      '                                   AND v.ativo = tp.ativo)'
+      'INNER JOIN tipos_tempo AS tt ON (tp.tipos_tempo_id = tt.id'
+      '                                 AND v.ativo = tt.ativo)'
+      'WHERE rv.ativo = ''1'''
+      '  AND rv.saida IS NULL'
+      '  AND rv.CAIXAS_ID = :pCAIXA'
+      '  AND (rv.ID = :pID OR rv.PLACA =:pPLACA)'
+    )
+    Params = <    
+      item
+        DataType = ftLargeint
+        Name = 'pCAIXA'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftLargeint
+        Name = 'pID'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftString
+        Name = 'pPLACA'
+        ParamType = ptInput
+      end>
+    Left = 451
+    Top = 296
+    ParamData = <    
+      item
+        DataType = ftLargeint
+        Name = 'pCAIXA'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftLargeint
+        Name = 'pID'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftString
+        Name = 'pPLACA'
+        ParamType = ptInput
+      end>
+    object zroqPagarID: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+    end
+    object zroqPagarENTRADA: TDateTimeField
+      FieldKind = fkData
+      FieldName = 'ENTRADA'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+    end
+    object zroqPagarTEMPO: TLargeintField
+      FieldKind = fkData
+      FieldName = 'TEMPO'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+    end
+    object zroqPagarVALOR: TFloatField
+      FieldKind = fkData
+      FieldName = 'VALOR'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Precision = 18
+    end
+    object zroqPagarVALOR_TEMPO: TFloatField
+      FieldKind = fkData
+      FieldName = 'VALOR_TEMPO'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Precision = 18
+    end
+    object zroqPagarVALOR_PAGAR: TFloatField
+      FieldKind = fkData
+      FieldName = 'VALOR_PAGAR'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      DisplayFormat = '#0.00'
+      Precision = 18
+    end
+  end
+  object dsPagar: TDataSource
+    DataSet = zroqPagar
+    Left = 488
+    Top = 296
   end
 end

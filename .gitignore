@@ -10,4 +10,5 @@ lazarus/estacionamento.ico
 # Arquivos de backup gerados pela IDE
 lazarus/backup/
 lazarus/view/backup/
+lazarus/utils/backup/
 

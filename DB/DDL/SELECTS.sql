@@ -76,3 +76,70 @@ from veiculos as v
  select * from caixas AS c
 WHERE c.data_abertura IS NOT NULL
   AND c.data_fechamento IS NULL
+
+
+
+
+
+  SELECT c.ID
+FROM caixas AS c
+WHERE c.data_abertura IS NOT NULL
+  AND c.data_fechamento IS NULL
+
+SELECT rv.entrada,
+       datediff (HOUR
+                 FROM rv.entrada TO CURRENT_TIMESTAMP) AS tempo ,
+       tp.valor ,
+       (tp.quantidade * tp.valor) AS valor_tempo ,
+       (datediff (HOUR
+                  FROM rv.entrada TO CURRENT_TIMESTAMP) * (tp.quantidade * tp.valor)) AS valor_pagar
+FROM registros_veiculos AS rv
+INNER JOIN veiculos AS v ON (v.id = rv.veiculos_id
+                             AND rv.ativo = v.ativo)
+INNER JOIN tabela_precos AS tp ON (tp.id = v.tebela_precos_id
+                                   AND v.ativo = tp.ativo)
+INNER JOIN tipos_tempo AS tt ON (tp.tipos_tempo_id = tt.id
+                                 AND v.ativo = tt.ativo)
+WHERE rv.ativo = '1'
+  AND rv.saida IS NULL
+  AND (rv.ID = 0
+       OR rv.PLACA = 'TESTE1');
+
+
+
+
+       SELECT rv.entrada,
+       datediff (HOUR
+                 FROM rv.entrada TO CURRENT_TIMESTAMP) AS tempo ,
+       tp.valor ,
+       (tp.quantidade * tp.valor) AS valor_tempo ,
+       (datediff (HOUR
+                  FROM rv.entrada TO CURRENT_TIMESTAMP) * (tp.quantidade * tp.valor)) AS valor_pagar
+FROM registros_veiculos AS rv
+INNER JOIN veiculos AS v ON (v.id = rv.veiculos_id
+                             AND rv.ativo = v.ativo)
+INNER JOIN tabela_precos AS tp ON (tp.id = v.tebela_precos_id
+                                   AND v.ativo = tp.ativo)
+INNER JOIN tipos_tempo AS tt ON (tp.tipos_tempo_id = tt.id
+                                 AND v.ativo = tt.ativo)
+SELECT rv.entrada,
+       datediff (HOUR
+                 FROM rv.entrada TO CURRENT_TIMESTAMP) AS tempo ,
+       tp.valor ,
+       (tp.quantidade * tp.valor) AS valor_tempo ,
+       (datediff (HOUR
+                  FROM rv.entrada TO CURRENT_TIMESTAMP) * (tp.quantidade * tp.valor)) AS valor_pagar
+FROM registros_veiculos AS rv
+INNER JOIN veiculos AS v ON (v.id = rv.veiculos_id
+                             AND rv.ativo = v.ativo)
+INNER JOIN tabela_precos AS tp ON (tp.id = v.tebela_precos_id
+                                   AND v.ativo = tp.ativo)
+INNER JOIN tipos_tempo AS tt ON (tp.tipos_tempo_id = tt.id
+                                 AND v.ativo = tt.ativo)
+WHERE rv.ativo = '1'
+  AND rv.saida IS NULL
+  and rv.CAIXAS_ID = :pCAIXA
+  AND (rv.ID = :pID
+       OR rv.PLACA =:pPLACA)
+
+

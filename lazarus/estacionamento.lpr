@@ -11,7 +11,8 @@ uses
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, zcomponent, tachartlazaruspkg, datetimectrls, memdslaz, frmPrincipal,
-  frmveiculo, frmtipotempo, frmtabelapreco, frmcaixa, frmregistroveiculo
+  frmveiculo, frmtipotempo, frmtabelapreco, frmcaixa, frmregistroveiculo, 
+unitCampoUtils
   { you can add units after this };
 
 {$R *.res}

@@ -89,7 +89,13 @@
         <Filename Value="view\frmregistroveiculo.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FormRegistroVeiculo"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="utils\unitcampoutils.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="unitCampoUtils"/>
       </Unit>
     </Units>
   </ProjectOptions>
@@ -101,7 +107,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="view"/>
+      <OtherUnitFiles Value="view;utils"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>
