@@ -50,52 +50,64 @@
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="view\frmprincipal.pas"/>
+        <Filename Value="view\unitprincipal.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FormPrincipal"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="frmPrincipal"/>
+        <UnitName Value="unitPrincipal"/>
       </Unit>
       <Unit>
-        <Filename Value="view\frmveiculo.pas"/>
+        <Filename Value="view\unitveiculo.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FormVeiculo"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <UnitName Value="unitVeiculo"/>
       </Unit>
       <Unit>
-        <Filename Value="view\frmtipotempo.pas"/>
+        <Filename Value="view\unittipotempo.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FormTipoTempo"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <UnitName Value="unitTipoTempo"/>
       </Unit>
       <Unit>
-        <Filename Value="view\frmtabelapreco.pas"/>
+        <Filename Value="view\unittabelapreco.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FormTabelaPreco"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <UnitName Value="unitTabelaPreco"/>
       </Unit>
       <Unit>
-        <Filename Value="view\frmcaixa.pas"/>
+        <Filename Value="view\unitcaixa.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FormCaixa"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <UnitName Value="unitCaixa"/>
       </Unit>
       <Unit>
-        <Filename Value="view\frmregistroveiculo.pas"/>
+        <Filename Value="view\unitregistroveiculo.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FormRegistroVeiculo"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <UnitName Value="unitRegistroVeiculo"/>
       </Unit>
       <Unit>
         <Filename Value="utils\unitcampoutils.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="unitCampoUtils"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\unitlogin.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormLogin"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="unitLogin"/>
       </Unit>
     </Units>
   </ProjectOptions>

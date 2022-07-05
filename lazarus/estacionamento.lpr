@@ -10,9 +10,9 @@ uses
   athreads,
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, zcomponent, tachartlazaruspkg, datetimectrls, memdslaz, frmPrincipal,
-  frmveiculo, frmtipotempo, frmtabelapreco, frmcaixa, frmregistroveiculo, 
-unitCampoUtils
+  Forms, zcomponent, tachartlazaruspkg, datetimectrls, memdslaz, unitPrincipal,
+  unitVeiculo, unitTipoTempo, unitTabelaPreco, unitCaixa, unitRegistroVeiculo, 
+unitCampoUtils, unitLogin
   { you can add units after this };
 
 {$R *.res}
@@ -27,6 +27,7 @@ begin
   Application.CreateForm(TFormTabelaPreco, FormTabelaPreco);
   Application.CreateForm(TFormCaixa, FormCaixa);
   Application.CreateForm(TFormRegistroVeiculo, FormRegistroVeiculo);
+  Application.CreateForm(TFormLogin, FormLogin);
   Application.Run;
 end.
 
