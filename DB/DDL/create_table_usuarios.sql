@@ -28,4 +28,4 @@ SET TERM ; ^
 INSERT INTO USUARIOS
 (ID, LOGIN, SENHA, ATIVO, DATA_CADASTRO)
 VALUES
-(1, 'root', '123456', '1', '5-JUL-2022 00:00:00');
+(1, 'root', '123456', '1', current_timestamp);
