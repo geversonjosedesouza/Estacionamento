@@ -20,6 +20,7 @@ object FormLogin: TFormLogin
     EditLabel.Caption = 'Usuário:'
     EditLabel.ParentColor = False
     TabOrder = 0
+    Text = 'root'
     OnKeyPress = ledUsuarioKeyPress
   end
   object ledSenha: TLabeledEdit
@@ -34,6 +35,7 @@ object FormLogin: TFormLogin
     EditLabel.ParentColor = False
     PasswordChar = '*'
     TabOrder = 1
+    Text = '123456'
     OnKeyPress = ledSenhaKeyPress
   end
   object imgLogo: TImage
@@ -183,5 +185,97 @@ object FormLogin: TFormLogin
     Caption = 'Entrar'
     OnClick = bbtnEntrarClick
     TabOrder = 2
+  end
+  object zcEstacionamento: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    Properties.Strings = (
+      'AutoEncodeStrings=True'
+      'controls_cp=CP_UTF8'
+    )
+    Connected = True
+    HostName = 'localhost'
+    Port = 3050
+    Database = 'C:\projetos\Estacionamento\DB\ESTACIONAMENTO.FDB'
+    User = 'SYSDBA'
+    Password = 'masterkey'
+    Protocol = 'firebird-2.5'
+    LibraryLocation = 'C:\projetos\Estacionamento\lazarus\lib\fbclient.dll'
+    Left = 24
+    Top = 264
+  end
+  object zroqLogar: TZReadOnlyQuery
+    Connection = zcEstacionamento
+    Active = True
+    SQL.Strings = (
+      'select '
+      '* '
+      'from '
+      'usuarios as u '
+      'where '
+      'u.login = :pLOGIN'
+    )
+    Params = <    
+      item
+        DataType = ftString
+        Name = 'pLOGIN'
+        ParamType = ptInput
+      end>
+    Left = 48
+    Top = 264
+    ParamData = <    
+      item
+        DataType = ftString
+        Name = 'pLOGIN'
+        ParamType = ptInput
+      end>
+    object zroqLogarID: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+    end
+    object zroqLogarLOGIN: TStringField
+      FieldKind = fkData
+      FieldName = 'LOGIN'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 50
+    end
+    object zroqLogarSENHA: TStringField
+      FieldKind = fkData
+      FieldName = 'SENHA'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 255
+    end
+    object zroqLogarATIVO: TStringField
+      FieldKind = fkData
+      FieldName = 'ATIVO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 1
+    end
+    object zroqLogarDATA_CADASTRO: TDateTimeField
+      FieldKind = fkData
+      FieldName = 'DATA_CADASTRO'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+    end
   end
 end

@@ -5,8 +5,8 @@ unit unitLogin;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, Buttons, unitCampoUtils
-  ,LCLType;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, Buttons,
+  unitCampoUtils, DB, LCLType, ZConnection, ZDataset, unitPrincipal;
 
 type
 
@@ -17,6 +17,13 @@ type
     imgLogo: TImage;
     ledSenha: TLabeledEdit;
     ledUsuario: TLabeledEdit;
+    zcEstacionamento: TZConnection;
+    zroqLogar: TZReadOnlyQuery;
+    zroqLogarATIVO: TStringField;
+    zroqLogarDATA_CADASTRO: TDateTimeField;
+    zroqLogarID: TLongintField;
+    zroqLogarLOGIN: TStringField;
+    zroqLogarSENHA: TStringField;
     procedure bbtnEntrarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure ledSenhaKeyPress(Sender: TObject; var Key: char);
@@ -55,6 +62,15 @@ end;
 procedure TFormLogin.bbtnEntrarClick(Sender: TObject);
 begin
   Criticas;
+  zroqLogar.Close;
+  zroqLogar.ParamByName('pLOGIN').Value := ledUsuario.Text;
+  zroqLogar.Open;
+  if not (zroqLogarLOGIN.IsNull) then
+  begin
+    FormPrincipal := TFormPrincipal.Create(Self, zroqLogarLOGIN.AsString);
+    FormPrincipal.Show;
+    Self.Hide;
+  end;
 end;
 
 procedure TFormLogin.ledSenhaKeyPress(Sender: TObject; var Key: char);
@@ -71,12 +87,12 @@ var
   intOk: integer = 0;
 begin
   if (ledUsuario.Text = '') then
-     intOk:= Application.MessageBox('Informe o usuário!', 'Atenção', MB_ICONEXCLAMATION);
+    intOk := Application.MessageBox('Informe o usuário!', 'Atenção',
+      MB_ICONEXCLAMATION);
   if (ledSenha.Text = '') then
-     intOk:= Application.MessageBox('Informe a senha!', 'Atenção', MB_ICONEXCLAMATION);
+    intOk := Application.MessageBox('Informe a senha!', 'Atenção', MB_ICONEXCLAMATION);
   if intOk <> 0 then
-     Abort;
+    Abort;
 end;
 
 end.
-

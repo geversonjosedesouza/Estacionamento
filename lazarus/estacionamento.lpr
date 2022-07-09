@@ -21,12 +21,6 @@ begin
   RequireDerivedFormResource:=True;
   Application.Scaled:=True;
   Application.Initialize;
-  Application.CreateForm(TFormPrincipal, FormPrincipal);
-  Application.CreateForm(TFormVeiculo, FormVeiculo);
-  Application.CreateForm(TFormTipoTempo, FormTipoTempo);
-  Application.CreateForm(TFormTabelaPreco, FormTabelaPreco);
-  Application.CreateForm(TFormCaixa, FormCaixa);
-  Application.CreateForm(TFormRegistroVeiculo, FormRegistroVeiculo);
   Application.CreateForm(TFormLogin, FormLogin);
   Application.Run;
 end.

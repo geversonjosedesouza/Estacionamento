@@ -8,10 +8,11 @@
       <Unit>
         <Filename Value="estacionamento.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="10"/>
-        <CursorPos X="33" Y="26"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="9"/>
+        <CursorPos X="49" Y="24"/>
         <UsageCount Value="211"/>
+        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="view\unitprincipal.pas"/>
@@ -20,8 +21,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitPrincipal"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="2"/>
+        <TopLine Value="74"/>
         <CursorPos X="78" Y="11"/>
         <FoldState Value=" T8Z22\"/>
         <UsageCount Value="211"/>
@@ -69,11 +69,13 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitCaixa"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="156"/>
-        <CursorPos X="33" Y="156"/>
-        <FoldState Value=" T4603 T3jI0OM"/>
-        <UsageCount Value="195"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="66"/>
+        <CursorPos X="17" Y="74"/>
+        <FoldState Value=" T4603 T3iX0Q4d"/>
+        <UsageCount Value="196"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="view\unitregistroveiculo.pas"/>
@@ -84,7 +86,7 @@
         <UnitName Value="unitRegistroVeiculo"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="19"/>
-        <UsageCount Value="51"/>
+        <UsageCount Value="52"/>
       </Unit>
       <Unit>
         <Filename Value="utils\unitcampoutils.pas"/>
@@ -93,18 +95,22 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="13"/>
         <CursorPos X="21" Y="26"/>
-        <UsageCount Value="42"/>
+        <UsageCount Value="43"/>
       </Unit>
       <Unit>
         <Filename Value="view\unitlogin.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FormLogin"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitLogin"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="59"/>
-        <CursorPos Y="55"/>
-        <UsageCount Value="39"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="65"/>
+        <CursorPos X="21" Y="73"/>
+        <UsageCount Value="40"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="C:\lazarus\docs\xml\lcl\dialogs\inputquery.pas"/>
@@ -112,7 +118,7 @@
         <UsageCount Value="7"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="1">
+    <JumpHistory HistoryIndex="6">
       <Position>
         <Filename Value="view\unitprincipal.pas"/>
         <Caret Line="2" Column="37"/>
@@ -120,6 +126,26 @@
       <Position>
         <Filename Value="view\unitprincipal.pas"/>
         <Caret Line="81" Column="56" TopLine="60"/>
+      </Position>
+      <Position>
+        <Filename Value="view\unitlogin.pas"/>
+        <Caret Line="55"/>
+      </Position>
+      <Position>
+        <Filename Value="view\unitlogin.pas"/>
+        <Caret Line="58" TopLine="40"/>
+      </Position>
+      <Position>
+        <Filename Value="view\unitlogin.pas"/>
+        <Caret Line="57" TopLine="39"/>
+      </Position>
+      <Position>
+        <Filename Value="view\unitlogin.pas"/>
+        <Caret Line="62" Column="18" TopLine="51"/>
+      </Position>
+      <Position>
+        <Filename Value="view\unitlogin.pas"/>
+        <Caret Line="70" Column="9" TopLine="59"/>
       </Position>
     </JumpHistory>
     <RunParams>
