@@ -12,8 +12,7 @@ uses
   Interfaces, // this includes the LCL widgetset
   Forms, zcomponent, tachartlazaruspkg, datetimectrls, memdslaz, unitPrincipal,
   unitVeiculo, unitTipoTempo, unitTabelaPreco, unitCaixa, unitRegistroVeiculo, 
-unitCampoUtils, unitLogin
-  { you can add units after this };
+unitCampoUtils;
 
 {$R *.res}
 
@@ -21,7 +20,7 @@ begin
   RequireDerivedFormResource:=True;
   Application.Scaled:=True;
   Application.Initialize;
-  Application.CreateForm(TFormLogin, FormLogin);
+  Application.CreateForm(TFormPrincipal, FormPrincipal);
   Application.Run;
 end.
 

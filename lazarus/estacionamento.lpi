@@ -102,14 +102,6 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="unitCampoUtils"/>
       </Unit>
-      <Unit>
-        <Filename Value="view\unitlogin.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="FormLogin"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="unitLogin"/>
-      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

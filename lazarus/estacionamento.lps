@@ -8,11 +8,10 @@
       <Unit>
         <Filename Value="estacionamento.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="9"/>
         <CursorPos X="49" Y="24"/>
         <UsageCount Value="211"/>
-        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="view\unitprincipal.pas"/>
@@ -21,9 +20,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitPrincipal"/>
-        <TopLine Value="74"/>
-        <CursorPos X="78" Y="11"/>
-        <FoldState Value=" T8Z22\"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="116"/>
+        <CursorPos X="50" Y="119"/>
+        <FoldState Value=" T8iD22%"/>
         <UsageCount Value="211"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -69,13 +69,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitCaixa"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="66"/>
-        <CursorPos X="17" Y="74"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="69"/>
+        <CursorPos X="17" Y="131"/>
         <FoldState Value=" T4603 T3iX0Q4d"/>
-        <UsageCount Value="196"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <UsageCount Value="200"/>
       </Unit>
       <Unit>
         <Filename Value="view\unitregistroveiculo.pas"/>
@@ -86,7 +84,7 @@
         <UnitName Value="unitRegistroVeiculo"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="19"/>
-        <UsageCount Value="52"/>
+        <UsageCount Value="56"/>
       </Unit>
       <Unit>
         <Filename Value="utils\unitcampoutils.pas"/>
@@ -95,22 +93,18 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="13"/>
         <CursorPos X="21" Y="26"/>
-        <UsageCount Value="43"/>
+        <UsageCount Value="47"/>
       </Unit>
       <Unit>
         <Filename Value="view\unitlogin.pas"/>
-        <IsPartOfProject Value="True"/>
         <ComponentName Value="FormLogin"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitLogin"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="65"/>
-        <CursorPos X="21" Y="73"/>
-        <UsageCount Value="40"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="81"/>
+        <CursorPos Y="88"/>
+        <UsageCount Value="44"/>
       </Unit>
       <Unit>
         <Filename Value="C:\lazarus\docs\xml\lcl\dialogs\inputquery.pas"/>
@@ -118,34 +112,110 @@
         <UsageCount Value="7"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="6">
+    <JumpHistory HistoryIndex="25">
       <Position>
         <Filename Value="view\unitprincipal.pas"/>
-        <Caret Line="2" Column="37"/>
+        <Caret Line="66" TopLine="60"/>
       </Position>
       <Position>
         <Filename Value="view\unitprincipal.pas"/>
-        <Caret Line="81" Column="56" TopLine="60"/>
+        <Caret Line="67" TopLine="60"/>
       </Position>
       <Position>
-        <Filename Value="view\unitlogin.pas"/>
-        <Caret Line="55"/>
+        <Filename Value="view\unitprincipal.pas"/>
+        <Caret Line="65" TopLine="60"/>
       </Position>
       <Position>
-        <Filename Value="view\unitlogin.pas"/>
-        <Caret Line="58" TopLine="40"/>
+        <Filename Value="view\unitprincipal.pas"/>
+        <Caret Line="66" TopLine="60"/>
       </Position>
       <Position>
-        <Filename Value="view\unitlogin.pas"/>
-        <Caret Line="57" TopLine="39"/>
+        <Filename Value="view\unitprincipal.pas"/>
+        <Caret Line="65" TopLine="60"/>
       </Position>
       <Position>
-        <Filename Value="view\unitlogin.pas"/>
-        <Caret Line="62" Column="18" TopLine="51"/>
+        <Filename Value="view\unitprincipal.pas"/>
+        <Caret Line="66" TopLine="60"/>
       </Position>
       <Position>
-        <Filename Value="view\unitlogin.pas"/>
-        <Caret Line="70" Column="9" TopLine="59"/>
+        <Filename Value="view\unitprincipal.pas"/>
+        <Caret Line="67" TopLine="60"/>
+      </Position>
+      <Position>
+        <Filename Value="view\unitprincipal.pas"/>
+        <Caret Line="66" Column="48" TopLine="60"/>
+      </Position>
+      <Position>
+        <Filename Value="view\unitprincipal.pas"/>
+        <Caret Line="65" TopLine="60"/>
+      </Position>
+      <Position>
+        <Filename Value="view\unitprincipal.pas"/>
+        <Caret Line="66" Column="41" TopLine="60"/>
+      </Position>
+      <Position>
+        <Filename Value="view\unitprincipal.pas"/>
+        <Caret Line="68" Column="15" TopLine="60"/>
+      </Position>
+      <Position>
+        <Filename Value="view\unitprincipal.pas"/>
+        <Caret Line="65" Column="16" TopLine="60"/>
+      </Position>
+      <Position>
+        <Filename Value="view\unitprincipal.pas"/>
+        <Caret Line="66" TopLine="60"/>
+      </Position>
+      <Position>
+        <Filename Value="view\unitprincipal.pas"/>
+        <Caret Line="67" TopLine="60"/>
+      </Position>
+      <Position>
+        <Filename Value="view\unitprincipal.pas"/>
+        <Caret Line="65" TopLine="62"/>
+      </Position>
+      <Position>
+        <Filename Value="view\unitprincipal.pas"/>
+        <Caret Line="70" TopLine="67"/>
+      </Position>
+      <Position>
+        <Filename Value="view\unitprincipal.pas"/>
+        <Caret Line="77" TopLine="74"/>
+      </Position>
+      <Position>
+        <Filename Value="view\unitprincipal.pas"/>
+        <Caret Line="36" Column="21" TopLine="28"/>
+      </Position>
+      <Position>
+        <Filename Value="view\unitprincipal.pas"/>
+        <Caret Line="11" Column="31" TopLine="7"/>
+      </Position>
+      <Position>
+        <Filename Value="view\unitprincipal.pas"/>
+        <Caret Line="79" Column="16" TopLine="69"/>
+      </Position>
+      <Position>
+        <Filename Value="view\unitprincipal.pas"/>
+        <Caret Line="80" TopLine="74"/>
+      </Position>
+      <Position>
+        <Filename Value="view\unitprincipal.pas"/>
+        <Caret Line="53" Column="26" TopLine="44"/>
+      </Position>
+      <Position>
+        <Filename Value="view\unitprincipal.pas"/>
+        <Caret Line="136" Column="36" TopLine="122"/>
+      </Position>
+      <Position>
+        <Filename Value="view\unitprincipal.pas"/>
+        <Caret Line="102" Column="7" TopLine="96"/>
+      </Position>
+      <Position>
+        <Filename Value="view\unitprincipal.pas"/>
+        <Caret Line="97" Column="7" TopLine="64"/>
+      </Position>
+      <Position>
+        <Filename Value="view\unitprincipal.pas"/>
+        <Caret Line="122" Column="40" TopLine="109"/>
       </Position>
     </JumpHistory>
     <RunParams>
