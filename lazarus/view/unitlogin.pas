@@ -6,7 +6,8 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, Buttons,
-  unitCampoUtils, DB, LCLType, ZConnection, ZDataset, unitPrincipal;
+  unitCampoUtils, DB, LCLType, ZConnection, ZDataset, unitPrincipal
+  ;
 
 type
 
@@ -17,6 +18,7 @@ type
     imgLogo: TImage;
     ledSenha: TLabeledEdit;
     ledUsuario: TLabeledEdit;
+    Panel1: TPanel;
     zcEstacionamento: TZConnection;
     zroqLogar: TZReadOnlyQuery;
     zroqLogarATIVO: TStringField;
@@ -67,9 +69,9 @@ begin
   zroqLogar.Open;
   if not (zroqLogarLOGIN.IsNull) then
   begin
-    FormPrincipal := TFormPrincipal.Create(Self, zroqLogarLOGIN.AsString);
-    FormPrincipal.Show;
-    Self.Hide;
+FormPrincipal := TFormPrincipal.Create(Self, zroqLogarLOGIN.AsString);
+FormPrincipal.Show;
+FormLogin.Hide;
   end;
 end;
 
@@ -87,8 +89,7 @@ var
   intOk: integer = 0;
 begin
   if (ledUsuario.Text = '') then
-    intOk := Application.MessageBox('Informe o usuário!', 'Atenção',
-      MB_ICONEXCLAMATION);
+    intOk := Application.MessageBox('Informe o usuário!', 'Atenção', MB_ICONEXCLAMATION);
   if (ledSenha.Text = '') then
     intOk := Application.MessageBox('Informe a senha!', 'Atenção', MB_ICONEXCLAMATION);
   if intOk <> 0 then

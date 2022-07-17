@@ -6,15 +6,22 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ComCtrls, Menus,
-  Buttons,
+  Buttons, ExtCtrls, ZConnection, ZDataset
+  , unitCampoUtils, DB, LCLType
   //Fromulários
-  unitVeiculo, unitTipoTempo, unitTabelaPreco, unitCaixa, unitRegistroVeiculo;
+  , unitVeiculo, unitTipoTempo, unitTabelaPreco, unitCaixa, unitRegistroVeiculo
+  //,unitLogin
+  ;
 
 type
 
   { TFormPrincipal }
 
   TFormPrincipal = class(TForm)
+    bbtnEntrar: TBitBtn;
+    imgLogo: TImage;
+    ledSenha: TLabeledEdit;
+    ledUsuario: TLabeledEdit;
     mniTabelaPreco: TMenuItem;
     mniTiposTempo: TMenuItem;
     mmPrincipal: TMainMenu;
@@ -24,6 +31,18 @@ type
     mniVeiculos: TMenuItem;
     mniCadastro: TMenuItem;
     mniOperacoes: TMenuItem;
+    pnlLogin: TPanel;
+    zcEstacionamento: TZConnection;
+    zroqLogar: TZReadOnlyQuery;
+    zroqLogarATIVO: TStringField;
+    zroqLogarDATA_CADASTRO: TDateTimeField;
+    zroqLogarID: TLongintField;
+    zroqLogarLOGIN: TStringField;
+    zroqLogarSENHA: TStringField;
+    procedure bbtnEntrarClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure ledSenhaKeyPress(Sender: TObject; var Key: char);
+    procedure ledUsuarioKeyPress(Sender: TObject; var Key: char);
     procedure mniCaixaClick(Sender: TObject);
     procedure mniEntradaSaidaClick(Sender: TObject);
     procedure mniSairClick(Sender: TObject);
@@ -32,6 +51,8 @@ type
     procedure mniVeiculosClick(Sender: TObject);
   private
     usuario: string;
+    campoUtils: TCampoUtils;
+    procedure Criticas;
 
   public
     constructor Create(AOwner: TComponent; login: string = 'Não autenticado'); overload;
@@ -54,8 +75,52 @@ end;
 
 procedure TFormPrincipal.mniCaixaClick(Sender: TObject);
 begin
-   FormCaixa := TFormCaixa.Create(Self, usuario);
-   FormCaixa.Show;
+  FormCaixa := TFormCaixa.Create(Self, usuario);
+  FormCaixa.Show;
+end;
+
+procedure TFormPrincipal.FormShow(Sender: TObject);
+begin
+  Self.Text := 'Login - Estacionanmento';
+  Self.Menu := nil;
+  Self.BorderIcons := [biSystemMenu];
+  Self.Height := pnlLogin.Height;
+  Self.Width := pnlLogin.Width;
+end;
+
+procedure TFormPrincipal.ledSenhaKeyPress(Sender: TObject; var Key: char);
+begin
+  if Key = #13 then
+  begin
+    Criticas;
+    ledSenha.SetFocus;
+  end;
+end;
+
+procedure TFormPrincipal.ledUsuarioKeyPress(Sender: TObject; var Key: char);
+begin
+  if Key = #13 then
+  begin
+    Criticas;
+    ledSenha.SetFocus;
+  end;
+end;
+
+procedure TFormPrincipal.bbtnEntrarClick(Sender: TObject);
+begin
+  Criticas;
+  zroqLogar.Close;
+  zroqLogar.ParamByName('pLOGIN').Value := ledUsuario.Text;
+  zroqLogar.Open;
+  if not (zroqLogarLOGIN.IsNull) then
+  begin
+    Self.Text := 'Principal - Estacionanmento';
+    Self.Menu := mmPrincipal;
+    Self.BorderIcons := [biSystemMenu, biMinimize];
+    Self.WindowState := wsMaximized;
+    usuario := zroqLogarLOGIN.AsString;
+    pnlLogin.Visible := False;
+  end;
 end;
 
 procedure TFormPrincipal.mniEntradaSaidaClick(Sender: TObject);
@@ -82,11 +147,24 @@ begin
   FormVeiculo.Show;
 end;
 
+procedure TFormPrincipal.Criticas;
+var
+  intOk: integer = 0;
+begin
+  if (ledUsuario.Text = '') then
+    intOk := Application.MessageBox('Informe o usuário!', 'Atenção',
+      MB_ICONEXCLAMATION);
+  if (ledSenha.Text = '') then
+    intOk := Application.MessageBox('Informe a senha!', 'Atenção', MB_ICONEXCLAMATION);
+  if intOk <> 0 then
+    Abort;
+end;
+
 constructor TFormPrincipal.Create(AOwner: TComponent; login: string);
 begin
   inherited Create(AOwner);
+  campoUtils := TCampoUtils.Create;
   usuario := login;
 end;
 
 end.
-
