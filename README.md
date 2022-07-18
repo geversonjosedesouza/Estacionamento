@@ -1,8 +1,8 @@
 # Estacionanemto
 Este controlar as entradas e saídas de veículos.
 
-## 📌 Versão ainda em desenvolvimento
-0.0.1
+## 📌 Versão release
+1.0.0
 
 ### Pré-requisitos
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
