@@ -1,5 +1,5 @@
 # Estacionanemto
-Este controlar as entradas e saídas de veículos.
+Este sistema irá controlar as entradas e saídas de veículos.
 
 ## 📌 Versão release
 1.0.0
